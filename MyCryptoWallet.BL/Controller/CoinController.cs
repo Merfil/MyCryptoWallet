@@ -14,6 +14,14 @@ namespace MyCryptoWallet.BL.Controller
             }
         }
 
+        public Coin GetCoin(string ticker)
+        {
+            using (CryptoContext context = new CryptoContext())
+            {
+                return context.Coins.Single(c => c.Ticker == ticker);
+            }
+        }
+
         public void AddCoin(string ticker, string name)
         {
             using (CryptoContext context = new CryptoContext())

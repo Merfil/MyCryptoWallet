@@ -18,13 +18,22 @@ namespace MyCryptoWallet.BL.Controller
                 return context.Wallets.ToList();
             }
         }
+        public Wallet GetWallet(string ticker)
+        {
+            using (CryptoContext context = new CryptoContext())
+            {
+                CoinController coinController = new CoinController();
+                var coin = coinController.GetCoin(ticker);
+                return context.Wallets.Single(t => t.Coin == coin);
+            }
+        }
 
-        public void AddWallet(Coin coin, double count)
+        public void AddWallet(int coinId, double count)
         {
             using (CryptoContext context = new CryptoContext())
             {
                 var wallet = new Wallet();
-                wallet.Coin = coin;
+                wallet.Coin = context.Coins.Single(c=>c.Id==coinId);
                 wallet.Count = count;
 
                 context.Wallets.Add(wallet);

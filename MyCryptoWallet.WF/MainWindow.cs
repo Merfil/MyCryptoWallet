@@ -25,5 +25,22 @@ namespace MyCryptoWallet.WF
             var addCoinForm = new AddCoinForm();
             addCoinForm.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var addMoneyForm = new AddMoneyForm();
+            addMoneyForm.ShowDialog();
+        }
+
+        private void coinComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            using(CryptoContext context = new CryptoContext())
+            {
+                var ticket = coinComboBox.Text;
+                WalletController walletController = new WalletController();
+                var wallet = walletController.GetWallet(ticket);
+                label2.Text=wallet.Count.ToString();
+            }
+        }
     }
 }
