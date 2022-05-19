@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCryptoWallet.BL", "MyCryptoWallet.BL\MyCryptoWallet.BL.csproj", "{F4380E9E-8559-419F-86CD-4785C7112891}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCryptoWallet.WF", "MyCryptoWallet.WF\MyCryptoWallet.WF.csproj", "{185B61D3-87A3-47AA-9D0C-168E9293744D}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4380E9E-8559-419F-86CD-4785C7112891}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4380E9E-8559-419F-86CD-4785C7112891}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4380E9E-8559-419F-86CD-4785C7112891}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4380E9E-8559-419F-86CD-4785C7112891}.Release|Any CPU.Build.0 = Release|Any CPU
+		{185B61D3-87A3-47AA-9D0C-168E9293744D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{185B61D3-87A3-47AA-9D0C-168E9293744D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{185B61D3-87A3-47AA-9D0C-168E9293744D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{185B61D3-87A3-47AA-9D0C-168E9293744D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
