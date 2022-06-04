@@ -28,19 +28,29 @@ namespace MyCryptoWallet.BL.Controller
             return context.Histories.ToList();
         }
 
+        public List<History> GetHistories(string coin)
+        {
+            var buyList = (context.Histories.Where(c => c.BuingCoin == coin).ToList());
+            var sellList = (context.Histories.Where(c => c.SellingCoin == coin).ToList());
+            foreach (var item in sellList)
+            {
+                buyList.Add(item);
+            }
+            return buyList;
+        }
+
         public double GetCoinCount(string coin)
         {
             var wallet = new Wallet();
-            try
-            {
-                wallet = Wallets.Single(w => w.Coin == coin);
-            }
-            catch (Exception)
-            {
-                wallet.Coin = coin;
-                wallet.Count = 0;
-            }
+            wallet = Wallets.Single(w => w.Coin == coin);
             return wallet.Count;
+        }
+
+        public double GetCoinValue(string coin)
+        {
+            var count = GetCoinCount(coin);
+            var price = 23;
+            return price * count;
         }
 
         public void CreateWallets ()

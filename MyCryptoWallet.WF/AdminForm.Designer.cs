@@ -83,6 +83,7 @@
             // 
             // coinComboBox
             // 
+            this.coinComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.coinComboBox.FormattingEnabled = true;
             this.coinComboBox.Location = new System.Drawing.Point(14, 44);
             this.coinComboBox.Name = "coinComboBox";

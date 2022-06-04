@@ -33,15 +33,22 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.spentMoney = new System.Windows.Forms.Label();
+            this.earnedMoney = new System.Windows.Forms.Label();
+            this.coinValue = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // coinComboBox
             // 
+            this.coinComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.coinComboBox.FormattingEnabled = true;
             this.coinComboBox.Location = new System.Drawing.Point(12, 12);
             this.coinComboBox.Name = "coinComboBox";
             this.coinComboBox.Size = new System.Drawing.Size(121, 23);
             this.coinComboBox.TabIndex = 0;
+            this.coinComboBox.SelectedIndexChanged += new System.EventHandler(this.coinComboBox_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -79,20 +86,67 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Итог";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 253);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(607, 95);
+            this.dataGridView1.TabIndex = 4;
+            // 
+            // spentMoney
+            // 
+            this.spentMoney.AutoSize = true;
+            this.spentMoney.Location = new System.Drawing.Point(531, 57);
+            this.spentMoney.Name = "spentMoney";
+            this.spentMoney.Size = new System.Drawing.Size(35, 15);
+            this.spentMoney.TabIndex = 1;
+            this.spentMoney.Text = "value";
+            // 
+            // earnedMoney
+            // 
+            this.earnedMoney.AutoSize = true;
+            this.earnedMoney.Location = new System.Drawing.Point(565, 86);
+            this.earnedMoney.Name = "earnedMoney";
+            this.earnedMoney.Size = new System.Drawing.Size(35, 15);
+            this.earnedMoney.TabIndex = 1;
+            this.earnedMoney.Text = "value";
+            // 
+            // coinValue
+            // 
+            this.coinValue.AutoSize = true;
+            this.coinValue.Location = new System.Drawing.Point(550, 117);
+            this.coinValue.Name = "coinValue";
+            this.coinValue.Size = new System.Drawing.Size(35, 15);
+            this.coinValue.TabIndex = 1;
+            this.coinValue.Text = "value";
+            // 
             // WalletForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(631, 360);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.coinValue);
+            this.Controls.Add(this.earnedMoney);
+            this.Controls.Add(this.spentMoney);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.coinComboBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "WalletForm";
             this.Text = "WalletForm";
             this.Load += new System.EventHandler(this.WalletForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,5 +159,9 @@
         private Label label2;
         private Label label3;
         private Label label4;
+        private DataGridView dataGridView1;
+        private Label spentMoney;
+        private Label earnedMoney;
+        private Label coinValue;
     }
 }

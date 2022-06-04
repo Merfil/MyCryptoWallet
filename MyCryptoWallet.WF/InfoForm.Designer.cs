@@ -29,28 +29,6 @@
         private void InitializeComponent()
         {
             this.coinComboBox = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.labelName10 = new System.Windows.Forms.Label();
-            this.labelName9 = new System.Windows.Forms.Label();
-            this.labelName8 = new System.Windows.Forms.Label();
-            this.labelName7 = new System.Windows.Forms.Label();
-            this.labelName6 = new System.Windows.Forms.Label();
-            this.labelName4 = new System.Windows.Forms.Label();
-            this.labelName5 = new System.Windows.Forms.Label();
-            this.labelName3 = new System.Windows.Forms.Label();
-            this.labelName2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.currencyComboBox = new System.Windows.Forms.ComboBox();
-            this.labelName11 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.buttonBuy = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -64,6 +42,24 @@
             this.radioButtonBuy = new System.Windows.Forms.RadioButton();
             this.textBoxCost = new System.Windows.Forms.TextBox();
             this.textBoxCount = new System.Windows.Forms.TextBox();
+            this.labelUpdate = new System.Windows.Forms.Label();
+            this.labelUpdateValue = new System.Windows.Forms.Label();
+            this.labelCurrentPrice = new System.Windows.Forms.Label();
+            this.labelCurrentPriceValue = new System.Windows.Forms.Label();
+            this.labelHighDay = new System.Windows.Forms.Label();
+            this.labelHighDayValue = new System.Windows.Forms.Label();
+            this.labelMinDay = new System.Windows.Forms.Label();
+            this.labelMinDayValue = new System.Windows.Forms.Label();
+            this.labelPriceChangeDayPercent = new System.Windows.Forms.Label();
+            this.labelPriceChangeDayPercerntValue = new System.Windows.Forms.Label();
+            this.labelPriceChangeHourPercent = new System.Windows.Forms.Label();
+            this.labelPriceChangeHourPercentValue = new System.Windows.Forms.Label();
+            this.labelPriceChangeTwoWeekPercent = new System.Windows.Forms.Label();
+            this.labelPriceChangeTwoWeekPercentValue = new System.Windows.Forms.Label();
+            this.labelPriceChangeWeekPercent = new System.Windows.Forms.Label();
+            this.labelPriceChangeWeekPercentValue = new System.Windows.Forms.Label();
+            this.labelPriceChangeMonthPercent = new System.Windows.Forms.Label();
+            this.labelPriceChangeMonthPercentValue = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -80,228 +76,6 @@
             this.coinComboBox.Size = new System.Drawing.Size(137, 33);
             this.coinComboBox.TabIndex = 1;
             this.coinComboBox.SelectedIndexChanged += new System.EventHandler(this.coinComboBox_SelectedIndexChanged);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(179, 281);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(73, 21);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "-99.99%";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(179, 260);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 21);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "-99.99%";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(179, 239);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(73, 21);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "-99.99%";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(179, 218);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 21);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "-99.99%";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(179, 197);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 21);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "-99.99%";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(179, 113);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 21);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "value";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(179, 176);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 21);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "-99.99%";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(179, 155);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 21);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "value";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(179, 134);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 21);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "value";
-            // 
-            // labelName10
-            // 
-            this.labelName10.AutoSize = true;
-            this.labelName10.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelName10.Location = new System.Drawing.Point(354, 336);
-            this.labelName10.Name = "labelName10";
-            this.labelName10.Size = new System.Drawing.Size(100, 21);
-            this.labelName10.TabIndex = 0;
-            this.labelName10.Text = "Обновлено";
-            // 
-            // labelName9
-            // 
-            this.labelName9.AutoSize = true;
-            this.labelName9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelName9.Location = new System.Drawing.Point(12, 281);
-            this.labelName9.Name = "labelName9";
-            this.labelName9.Size = new System.Drawing.Size(121, 21);
-            this.labelName9.TabIndex = 0;
-            this.labelName9.Text = "За два месяца";
-            // 
-            // labelName8
-            // 
-            this.labelName8.AutoSize = true;
-            this.labelName8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelName8.Location = new System.Drawing.Point(12, 260);
-            this.labelName8.Name = "labelName8";
-            this.labelName8.Size = new System.Drawing.Size(81, 21);
-            this.labelName8.TabIndex = 0;
-            this.labelName8.Text = "За месяц";
-            // 
-            // labelName7
-            // 
-            this.labelName7.AutoSize = true;
-            this.labelName7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelName7.Location = new System.Drawing.Point(12, 239);
-            this.labelName7.Name = "labelName7";
-            this.labelName7.Size = new System.Drawing.Size(120, 21);
-            this.labelName7.TabIndex = 0;
-            this.labelName7.Text = "За две недели";
-            // 
-            // labelName6
-            // 
-            this.labelName6.AutoSize = true;
-            this.labelName6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelName6.Location = new System.Drawing.Point(12, 218);
-            this.labelName6.Name = "labelName6";
-            this.labelName6.Size = new System.Drawing.Size(92, 21);
-            this.labelName6.TabIndex = 0;
-            this.labelName6.Text = "За неделю";
-            // 
-            // labelName4
-            // 
-            this.labelName4.AutoSize = true;
-            this.labelName4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelName4.Location = new System.Drawing.Point(12, 176);
-            this.labelName4.Name = "labelName4";
-            this.labelName4.Size = new System.Drawing.Size(60, 21);
-            this.labelName4.TabIndex = 0;
-            this.labelName4.Text = "За час";
-            // 
-            // labelName5
-            // 
-            this.labelName5.AutoSize = true;
-            this.labelName5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelName5.Location = new System.Drawing.Point(12, 92);
-            this.labelName5.Name = "labelName5";
-            this.labelName5.Size = new System.Drawing.Size(168, 21);
-            this.labelName5.TabIndex = 0;
-            this.labelName5.Text = "Изменение за сутки";
-            // 
-            // labelName3
-            // 
-            this.labelName3.AutoSize = true;
-            this.labelName3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelName3.Location = new System.Drawing.Point(12, 155);
-            this.labelName3.Name = "labelName3";
-            this.labelName3.Size = new System.Drawing.Size(95, 21);
-            this.labelName3.TabIndex = 0;
-            this.labelName3.Text = "Максимум";
-            // 
-            // labelName2
-            // 
-            this.labelName2.AutoSize = true;
-            this.labelName2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelName2.Location = new System.Drawing.Point(12, 134);
-            this.labelName2.Name = "labelName2";
-            this.labelName2.Size = new System.Drawing.Size(89, 21);
-            this.labelName2.TabIndex = 0;
-            this.labelName2.Text = "Минимум";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(233, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 24);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "100$";
-            // 
-            // currencyComboBox
-            // 
-            this.currencyComboBox.BackColor = System.Drawing.SystemColors.Control;
-            this.currencyComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.currencyComboBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.currencyComboBox.FormattingEnabled = true;
-            this.currencyComboBox.Location = new System.Drawing.Point(159, 12);
-            this.currencyComboBox.Name = "currencyComboBox";
-            this.currencyComboBox.Size = new System.Drawing.Size(68, 33);
-            this.currencyComboBox.TabIndex = 2;
-            this.currencyComboBox.SelectedIndexChanged += new System.EventHandler(this.coinComboBox_SelectedIndexChanged);
-            // 
-            // labelName11
-            // 
-            this.labelName11.AutoSize = true;
-            this.labelName11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelName11.Location = new System.Drawing.Point(12, 197);
-            this.labelName11.Name = "labelName11";
-            this.labelName11.Size = new System.Drawing.Size(78, 21);
-            this.labelName11.TabIndex = 3;
-            this.labelName11.Text = "За сутки";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(460, 336);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(159, 21);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "99.99.9999 99:99:99";
             // 
             // buttonBuy
             // 
@@ -438,39 +212,199 @@
             this.textBoxCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             this.textBoxCount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxCount_KeyUp);
             // 
+            // labelUpdate
+            // 
+            this.labelUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelUpdate.AutoSize = true;
+            this.labelUpdate.Location = new System.Drawing.Point(12, 336);
+            this.labelUpdate.Name = "labelUpdate";
+            this.labelUpdate.Size = new System.Drawing.Size(143, 15);
+            this.labelUpdate.TabIndex = 22;
+            this.labelUpdate.Text = "Последнее обновление :";
+            // 
+            // labelUpdateValue
+            // 
+            this.labelUpdateValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelUpdateValue.AutoSize = true;
+            this.labelUpdateValue.Location = new System.Drawing.Point(161, 337);
+            this.labelUpdateValue.Name = "labelUpdateValue";
+            this.labelUpdateValue.Size = new System.Drawing.Size(106, 15);
+            this.labelUpdateValue.TabIndex = 23;
+            this.labelUpdateValue.Text = "99.99.9999 99:99:99";
+            // 
+            // labelCurrentPrice
+            // 
+            this.labelCurrentPrice.AutoSize = true;
+            this.labelCurrentPrice.Location = new System.Drawing.Point(12, 48);
+            this.labelCurrentPrice.Name = "labelCurrentPrice";
+            this.labelCurrentPrice.Size = new System.Drawing.Size(41, 15);
+            this.labelCurrentPrice.TabIndex = 24;
+            this.labelCurrentPrice.Text = "Цена :";
+            // 
+            // labelCurrentPriceValue
+            // 
+            this.labelCurrentPriceValue.AutoSize = true;
+            this.labelCurrentPriceValue.Location = new System.Drawing.Point(59, 48);
+            this.labelCurrentPriceValue.Name = "labelCurrentPriceValue";
+            this.labelCurrentPriceValue.Size = new System.Drawing.Size(40, 15);
+            this.labelCurrentPriceValue.TabIndex = 24;
+            this.labelCurrentPriceValue.Text = "9999 $";
+            // 
+            // labelHighDay
+            // 
+            this.labelHighDay.AutoSize = true;
+            this.labelHighDay.Location = new System.Drawing.Point(12, 88);
+            this.labelHighDay.Name = "labelHighDay";
+            this.labelHighDay.Size = new System.Drawing.Size(36, 15);
+            this.labelHighDay.TabIndex = 24;
+            this.labelHighDay.Text = "Макс";
+            // 
+            // labelHighDayValue
+            // 
+            this.labelHighDayValue.AutoSize = true;
+            this.labelHighDayValue.Location = new System.Drawing.Point(102, 88);
+            this.labelHighDayValue.Name = "labelHighDayValue";
+            this.labelHighDayValue.Size = new System.Drawing.Size(40, 15);
+            this.labelHighDayValue.TabIndex = 24;
+            this.labelHighDayValue.Text = "9999 $";
+            // 
+            // labelMinDay
+            // 
+            this.labelMinDay.AutoSize = true;
+            this.labelMinDay.Location = new System.Drawing.Point(12, 103);
+            this.labelMinDay.Name = "labelMinDay";
+            this.labelMinDay.Size = new System.Drawing.Size(32, 15);
+            this.labelMinDay.TabIndex = 24;
+            this.labelMinDay.Text = "Мин";
+            // 
+            // labelMinDayValue
+            // 
+            this.labelMinDayValue.AutoSize = true;
+            this.labelMinDayValue.Location = new System.Drawing.Point(102, 103);
+            this.labelMinDayValue.Name = "labelMinDayValue";
+            this.labelMinDayValue.Size = new System.Drawing.Size(40, 15);
+            this.labelMinDayValue.TabIndex = 24;
+            this.labelMinDayValue.Text = "9999 $";
+            // 
+            // labelPriceChangeDayPercent
+            // 
+            this.labelPriceChangeDayPercent.AutoSize = true;
+            this.labelPriceChangeDayPercent.Location = new System.Drawing.Point(12, 133);
+            this.labelPriceChangeDayPercent.Name = "labelPriceChangeDayPercent";
+            this.labelPriceChangeDayPercent.Size = new System.Drawing.Size(59, 15);
+            this.labelPriceChangeDayPercent.TabIndex = 24;
+            this.labelPriceChangeDayPercent.Text = "За сутки :";
+            // 
+            // labelPriceChangeDayPercerntValue
+            // 
+            this.labelPriceChangeDayPercerntValue.AutoSize = true;
+            this.labelPriceChangeDayPercerntValue.Location = new System.Drawing.Point(107, 133);
+            this.labelPriceChangeDayPercerntValue.Name = "labelPriceChangeDayPercerntValue";
+            this.labelPriceChangeDayPercerntValue.Size = new System.Drawing.Size(35, 15);
+            this.labelPriceChangeDayPercerntValue.TabIndex = 24;
+            this.labelPriceChangeDayPercerntValue.Text = "999%";
+            // 
+            // labelPriceChangeHourPercent
+            // 
+            this.labelPriceChangeHourPercent.AutoSize = true;
+            this.labelPriceChangeHourPercent.Location = new System.Drawing.Point(12, 118);
+            this.labelPriceChangeHourPercent.Name = "labelPriceChangeHourPercent";
+            this.labelPriceChangeHourPercent.Size = new System.Drawing.Size(48, 15);
+            this.labelPriceChangeHourPercent.TabIndex = 24;
+            this.labelPriceChangeHourPercent.Text = "За час :";
+            // 
+            // labelPriceChangeHourPercentValue
+            // 
+            this.labelPriceChangeHourPercentValue.AutoSize = true;
+            this.labelPriceChangeHourPercentValue.Location = new System.Drawing.Point(107, 118);
+            this.labelPriceChangeHourPercentValue.Name = "labelPriceChangeHourPercentValue";
+            this.labelPriceChangeHourPercentValue.Size = new System.Drawing.Size(35, 15);
+            this.labelPriceChangeHourPercentValue.TabIndex = 24;
+            this.labelPriceChangeHourPercentValue.Text = "999%";
+            // 
+            // labelPriceChangeTwoWeekPercent
+            // 
+            this.labelPriceChangeTwoWeekPercent.AutoSize = true;
+            this.labelPriceChangeTwoWeekPercent.Location = new System.Drawing.Point(12, 164);
+            this.labelPriceChangeTwoWeekPercent.Name = "labelPriceChangeTwoWeekPercent";
+            this.labelPriceChangeTwoWeekPercent.Size = new System.Drawing.Size(89, 15);
+            this.labelPriceChangeTwoWeekPercent.TabIndex = 24;
+            this.labelPriceChangeTwoWeekPercent.Text = "За две недели :";
+            // 
+            // labelPriceChangeTwoWeekPercentValue
+            // 
+            this.labelPriceChangeTwoWeekPercentValue.AutoSize = true;
+            this.labelPriceChangeTwoWeekPercentValue.Location = new System.Drawing.Point(107, 164);
+            this.labelPriceChangeTwoWeekPercentValue.Name = "labelPriceChangeTwoWeekPercentValue";
+            this.labelPriceChangeTwoWeekPercentValue.Size = new System.Drawing.Size(35, 15);
+            this.labelPriceChangeTwoWeekPercentValue.TabIndex = 24;
+            this.labelPriceChangeTwoWeekPercentValue.Text = "999%";
+            // 
+            // labelPriceChangeWeekPercent
+            // 
+            this.labelPriceChangeWeekPercent.AutoSize = true;
+            this.labelPriceChangeWeekPercent.Location = new System.Drawing.Point(12, 149);
+            this.labelPriceChangeWeekPercent.Name = "labelPriceChangeWeekPercent";
+            this.labelPriceChangeWeekPercent.Size = new System.Drawing.Size(71, 15);
+            this.labelPriceChangeWeekPercent.TabIndex = 24;
+            this.labelPriceChangeWeekPercent.Text = "За неделю :";
+            // 
+            // labelPriceChangeWeekPercentValue
+            // 
+            this.labelPriceChangeWeekPercentValue.AutoSize = true;
+            this.labelPriceChangeWeekPercentValue.Location = new System.Drawing.Point(107, 149);
+            this.labelPriceChangeWeekPercentValue.Name = "labelPriceChangeWeekPercentValue";
+            this.labelPriceChangeWeekPercentValue.Size = new System.Drawing.Size(35, 15);
+            this.labelPriceChangeWeekPercentValue.TabIndex = 24;
+            this.labelPriceChangeWeekPercentValue.Text = "999%";
+            // 
+            // labelPriceChangeMonthPercent
+            // 
+            this.labelPriceChangeMonthPercent.AutoSize = true;
+            this.labelPriceChangeMonthPercent.Location = new System.Drawing.Point(12, 179);
+            this.labelPriceChangeMonthPercent.Name = "labelPriceChangeMonthPercent";
+            this.labelPriceChangeMonthPercent.Size = new System.Drawing.Size(63, 15);
+            this.labelPriceChangeMonthPercent.TabIndex = 24;
+            this.labelPriceChangeMonthPercent.Text = "За месяц :";
+            // 
+            // labelPriceChangeMonthPercentValue
+            // 
+            this.labelPriceChangeMonthPercentValue.AutoSize = true;
+            this.labelPriceChangeMonthPercentValue.Location = new System.Drawing.Point(107, 179);
+            this.labelPriceChangeMonthPercentValue.Name = "labelPriceChangeMonthPercentValue";
+            this.labelPriceChangeMonthPercentValue.Size = new System.Drawing.Size(35, 15);
+            this.labelPriceChangeMonthPercentValue.TabIndex = 24;
+            this.labelPriceChangeMonthPercentValue.Text = "999%";
+            // 
             // InfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(631, 360);
+            this.Controls.Add(this.labelCurrentPriceValue);
+            this.Controls.Add(this.labelPriceChangeHourPercentValue);
+            this.Controls.Add(this.labelPriceChangeWeekPercentValue);
+            this.Controls.Add(this.labelPriceChangeMonthPercentValue);
+            this.Controls.Add(this.labelPriceChangeTwoWeekPercentValue);
+            this.Controls.Add(this.labelPriceChangeDayPercerntValue);
+            this.Controls.Add(this.labelMinDayValue);
+            this.Controls.Add(this.labelHighDayValue);
+            this.Controls.Add(this.labelPriceChangeHourPercent);
+            this.Controls.Add(this.labelPriceChangeWeekPercent);
+            this.Controls.Add(this.labelPriceChangeMonthPercent);
+            this.Controls.Add(this.labelPriceChangeTwoWeekPercent);
+            this.Controls.Add(this.labelPriceChangeDayPercent);
+            this.Controls.Add(this.labelMinDay);
+            this.Controls.Add(this.labelHighDay);
+            this.Controls.Add(this.labelCurrentPrice);
+            this.Controls.Add(this.labelUpdateValue);
+            this.Controls.Add(this.labelUpdate);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.labelCoinCount);
             this.Controls.Add(this.labelBalance);
-            this.Controls.Add(this.labelName11);
-            this.Controls.Add(this.currencyComboBox);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.labelName4);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.labelName5);
             this.Controls.Add(this.coinComboBox);
-            this.Controls.Add(this.labelName3);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.labelName2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.labelName7);
-            this.Controls.Add(this.labelName6);
-            this.Controls.Add(this.labelName8);
-            this.Controls.Add(this.labelName9);
-            this.Controls.Add(this.labelName10);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InfoForm";
             this.Text = "Form1";
@@ -485,28 +419,6 @@
 
         #endregion
         private ComboBox coinComboBox;
-        private Label label1;
-        private Label label10;
-        private Label label9;
-        private Label label8;
-        private Label label7;
-        private Label label6;
-        private Label label5;
-        private Label label3;
-        private Label label2;
-        private Label labelName10;
-        private Label labelName9;
-        private Label labelName8;
-        private Label labelName7;
-        private Label labelName6;
-        private Label labelName5;
-        private Label labelName3;
-        private Label labelName2;
-        private Label label4;
-        private Label labelName4;
-        private ComboBox currencyComboBox;
-        private Label labelName11;
-        private Label label11;
         private Button buttonBuy;
         private Label label12;
         private Label label13;
@@ -520,5 +432,23 @@
         private TextBox textBoxCount;
         private RadioButton radioButtonSell;
         private RadioButton radioButtonBuy;
+        private Label labelUpdate;
+        private Label labelUpdateValue;
+        private Label labelCurrentPrice;
+        private Label labelCurrentPriceValue;
+        private Label labelHighDay;
+        private Label labelHighDayValue;
+        private Label labelMinDay;
+        private Label labelMinDayValue;
+        private Label labelPriceChangeDayPercent;
+        private Label labelPriceChangeDayPercerntValue;
+        private Label labelPriceChangeHourPercent;
+        private Label labelPriceChangeHourPercentValue;
+        private Label labelPriceChangeTwoWeekPercent;
+        private Label labelPriceChangeTwoWeekPercentValue;
+        private Label labelPriceChangeWeekPercent;
+        private Label labelPriceChangeWeekPercentValue;
+        private Label labelPriceChangeMonthPercent;
+        private Label labelPriceChangeMonthPercentValue;
     }
 }

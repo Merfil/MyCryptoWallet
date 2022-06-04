@@ -22,47 +22,26 @@ namespace MyCryptoWallet.WF
                 coinComboBox.Items.Add(item);
             }
 
-            foreach (var item in Enum.GetValues(typeof(ApiEnum.Currency)))
-            {
-                currencyComboBox.Items.Add(item);
-            }
             coinComboBox.SelectedIndex = 0;
-            currencyComboBox.SelectedIndex = 0;
-
             labelBalance.Text = historyController.GetCoinCount("tether").ToString() + " $";
-
             radioButtonBuy.Checked = true;
         }
 
         private void coinComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (coinComboBox.SelectedIndex != -1 && currencyComboBox.SelectedIndex != -1)
-            {
-                ApiEnum.Coin coin = (ApiEnum.Coin)coinComboBox.SelectedItem;
-                ApiEnum.Currency currency = (ApiEnum.Currency)currencyComboBox.SelectedItem;
-                ApiController apiController = new ApiController(coin, currency);
-                string[] a = apiController.GetInfo();
-                for (int i = 0; i < a.Length; i++)
-                {
-                    if (a[a.Length-1] != null)
-                    {
-                        if (a[i].Contains("usd"))
-                        {
-                            a[i] = a[i].Replace("usd", "$");
-                        }
-                        if (a[i].Contains("rub"))
-                        {
-                            a[i] = a[i].Replace("rub", "руб.");
-                        }
-                        (Controls["label" + (i + 1)] as Label).Text = a[i];
-                    }
-                    else
-                    {
-                        (Controls["label" + (i + 1)] as Label).Text = "null";
-                    }
-                }
-                labelCoinCount.Text = historyController.GetCoinCount(coinComboBox.Text).ToString();
-            }
+            var coin = Data.Coins.Single(c => c.Id.ToString() == coinComboBox.Text);
+
+            labelUpdateValue.Text = coin.LastUpdated.ToString();
+            labelCurrentPriceValue.Text = coin.CurrentPrice.ToString() + " $";
+            labelHighDayValue.Text = coin.High24h.ToString();
+            labelMinDayValue.Text = coin.Low24h.ToString();
+            labelPriceChangeHourPercentValue.Text = coin.PriceChangePercentage1hInCurrency.ToString();
+            labelPriceChangeDayPercerntValue.Text = coin.PriceChangePercentage24hInCurrency.ToString();
+            labelPriceChangeWeekPercentValue.Text = coin.PriceChangePercentage7dInCurrency.ToString();
+            labelPriceChangeTwoWeekPercentValue.Text = coin.PriceChangePercentage7dInCurrency.ToString();
+            labelPriceChangeMonthPercentValue.Text = coin.PriceChangePercentage30dInCurrency.ToString();
+
+
         }
 
         private void buttonBuy_Click(object sender, EventArgs e)
@@ -70,7 +49,7 @@ namespace MyCryptoWallet.WF
             var buingCoin = coinComboBox.Text;
             var sellingCoin = "tether";
             var count = Convert.ToDouble(textBoxCount.Text);
-            var price = Convert.ToDouble(label1.Text.Split(" ")[0]);
+            var price = Convert.ToDouble(labelCurrentPriceValue.Text.Split(" ")[0]);
             var cost = price * count + historyController.GetFees(price, count);
 
             if (radioButtonBuy.Checked && Convert.ToDouble(labelBalance.Text.Split(" ")[0]) >= cost)
@@ -86,7 +65,7 @@ namespace MyCryptoWallet.WF
         {
             if (textBoxCount.Text!="")
             {
-                var price = Convert.ToDouble(label1.Text.Split(" ")[0]);
+                var price = Convert.ToDouble(labelCurrentPriceValue.Text.Split(" ")[0]);
                 var count = Convert.ToDouble(textBoxCount.Text);
                 var fee = historyController.GetFees(price,count);
 
@@ -101,7 +80,7 @@ namespace MyCryptoWallet.WF
         {
             if (textBoxCost.Text!="")
             {
-                var price = Convert.ToDouble(label1.Text.Split(" ")[0]);
+                var price = Convert.ToDouble(labelCurrentPriceValue.Text.Split(" ")[0]);
                 var cost = Convert.ToDouble(textBoxCost.Text);
                 var count = (1000 * cost) / 1001 / price;
                 textBoxCount.Text = Math.Round(count,2).ToString();

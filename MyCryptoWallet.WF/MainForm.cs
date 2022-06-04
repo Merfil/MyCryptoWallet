@@ -1,4 +1,5 @@
 ﻿using MyCryptoWallet.BL.Controller;
+using MyCryptoWallet.BL.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace MyCryptoWallet.WF
 {
     public partial class MainForm : Form
     {
+
         #region Drag 'n Drop
         [DllImport("user32", CharSet = CharSet.Auto)]
         internal extern static bool PostMessage(IntPtr hWnd, uint Msg, uint WParam, uint LParam);
@@ -62,6 +64,9 @@ namespace MyCryptoWallet.WF
         {
             HistoryController historyController = new HistoryController();
             historyController.CreateWallets();
+
+            ApiController apiController = new ApiController();
+            Data.Coins = apiController.GetResponse();
         }
 
         private void buttonWallet_Click(object sender, EventArgs e)
@@ -73,5 +78,10 @@ namespace MyCryptoWallet.WF
             panelMain.Controls.Add(walletForm);
             walletForm.Show();
         }
+    }
+
+    static class Data
+    {
+        public static Coin[]? Coins { get; set; }
     }
 }

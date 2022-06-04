@@ -30,5 +30,34 @@ namespace MyCryptoWallet.WF
             }
             coinComboBox.SelectedIndex = 0;
         }
+
+        private async void coinComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var coin = coinComboBox.Text;
+            var histories = new List<History>();
+            if (coin != "All")
+                histories = historyController.GetHistories(coin);
+            else
+                histories = historyController.GetHistories();
+            dataGridView1.DataSource = histories;
+
+            var buyingHistory = histories.Where(w => w.IsBuing == true);
+            double buyingSum = 0;
+            foreach (var item in buyingHistory)
+            {
+                buyingSum += item.Price * item.Count + item.Fees;
+            }
+            spentMoney.Text = buyingSum.ToString();
+
+            var sellingHistory = histories.Where(w => w.IsBuing == false);
+            double sellingSum = 0;
+            foreach (var item in sellingHistory)
+            {
+                sellingSum += item.Price * item.Count - item.Fees;
+            }
+            earnedMoney.Text = sellingSum.ToString();
+
+            //coinValue = 
+        }
     }
 }
