@@ -2,7 +2,6 @@
 
 namespace MyCryptoWallet.BL.Model
 {
-    // Root myDeserializedClass = JsonConvert.DeserializeObject<List<Root>>(myJsonResponse);
     public class Roi
     {
         [JsonProperty("times")]

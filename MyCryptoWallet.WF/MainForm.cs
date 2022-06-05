@@ -34,54 +34,49 @@ namespace MyCryptoWallet.WF
             Application.Exit();
         }
 
-        private void buttonCoins_Click(object sender, EventArgs e)
-        {
-            labelHeader.Text = buttonCoins.Text;
-            panelMain.Controls.Clear();
-            InfoForm infoForm = new InfoForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            infoForm.FormBorderStyle = FormBorderStyle.None;
-            panelMain.Controls.Add(infoForm);
-            infoForm.Show();
-        }
-
         private void TitleBar_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             PostMessage(this.Handle, WM_SYSCOMMAND, DOMOVE, 0);
         }
 
-        private void buttonAdmin_Click(object sender, EventArgs e)
-        {
-            labelHeader.Text = buttonAdmin.Text;
-            panelMain.Controls.Clear();
-            AdminForm adminForm = new AdminForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            adminForm.FormBorderStyle = FormBorderStyle.None;
-            panelMain.Controls.Add(adminForm);
-            adminForm.Show();
-        }
-
         private void MainForm_Load(object sender, EventArgs e)
         {
             HistoryController historyController = new HistoryController();
-            historyController.CreateWallets();
-
             ApiController apiController = new ApiController();
+
             Data.Coins = apiController.GetResponse();
+            historyController.CreateWallets();
+        }
+
+        private void OpenForm(Form form, string text)
+        {
+            labelHeader.Text = text;
+            panelMain.Controls.Clear();
+            form.Dock = DockStyle.Fill;
+            form.TopLevel = false;
+            form.TopMost = true;
+            form.FormBorderStyle = FormBorderStyle.None;
+            panelMain.Controls.Add(form);
+            form.Show();
         }
 
         private void buttonWallet_Click(object sender, EventArgs e)
         {
-            labelHeader.Text = (sender as Button).Text;
-            panelMain.Controls.Clear();
-            WalletForm walletForm = new WalletForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            walletForm.FormBorderStyle = FormBorderStyle.None;
-            panelMain.Controls.Add(walletForm);
-            walletForm.Show();
+            var walletFotm = new WalletForm();
+            OpenForm(walletFotm, (sender as Button).Text);
         }
-    }
 
-    static class Data
-    {
-        public static Coin[]? Coins { get; set; }
+        private void buttonCoins_Click(object sender, EventArgs e)
+        {
+            var infoForm = new InfoForm();
+            OpenForm(infoForm, (sender as Button).Text);
+        }
+
+        private void buttonAdmin_Click(object sender, EventArgs e)
+        {
+            var adminForm = new AdminForm();
+            OpenForm(adminForm, (sender as Button).Text);
+        }
     }
 }

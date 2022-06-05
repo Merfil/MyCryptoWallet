@@ -28,16 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.coinComboBox = new System.Windows.Forms.ComboBox();
-            this.buttonBuy = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.panelOperation = new System.Windows.Forms.Panel();
+            this.labelCoinCountValue = new System.Windows.Forms.Label();
+            this.labelCost = new System.Windows.Forms.Label();
             this.labelCoinCount = new System.Windows.Forms.Label();
+            this.labelBalanceValue = new System.Windows.Forms.Label();
+            this.labelBuyingCount = new System.Windows.Forms.Label();
+            this.buttonBuy = new System.Windows.Forms.Button();
             this.labelBalance = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.radioButtonSell = new System.Windows.Forms.RadioButton();
             this.radioButtonBuy = new System.Windows.Forms.RadioButton();
             this.textBoxCost = new System.Windows.Forms.TextBox();
@@ -60,123 +58,112 @@
             this.labelPriceChangeWeekPercentValue = new System.Windows.Forms.Label();
             this.labelPriceChangeMonthPercent = new System.Windows.Forms.Label();
             this.labelPriceChangeMonthPercentValue = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panelChart = new System.Windows.Forms.Panel();
+            this.panelHistory = new System.Windows.Forms.Panel();
+            this.coinComboBox = new System.Windows.Forms.ComboBox();
+            this.panelOperation.SuspendLayout();
+            this.panelHistory.SuspendLayout();
             this.SuspendLayout();
             // 
-            // coinComboBox
+            // panelOperation
             // 
-            this.coinComboBox.BackColor = System.Drawing.SystemColors.Control;
-            this.coinComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.coinComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.coinComboBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.coinComboBox.FormattingEnabled = true;
-            this.coinComboBox.Location = new System.Drawing.Point(12, 12);
-            this.coinComboBox.Name = "coinComboBox";
-            this.coinComboBox.Size = new System.Drawing.Size(137, 33);
-            this.coinComboBox.TabIndex = 1;
-            this.coinComboBox.SelectedIndexChanged += new System.EventHandler(this.coinComboBox_SelectedIndexChanged);
+            this.panelOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelOperation.Controls.Add(this.labelCoinCountValue);
+            this.panelOperation.Controls.Add(this.labelCost);
+            this.panelOperation.Controls.Add(this.labelCoinCount);
+            this.panelOperation.Controls.Add(this.labelBalanceValue);
+            this.panelOperation.Controls.Add(this.labelBuyingCount);
+            this.panelOperation.Controls.Add(this.buttonBuy);
+            this.panelOperation.Controls.Add(this.labelBalance);
+            this.panelOperation.Controls.Add(this.radioButtonSell);
+            this.panelOperation.Controls.Add(this.radioButtonBuy);
+            this.panelOperation.Controls.Add(this.textBoxCost);
+            this.panelOperation.Controls.Add(this.textBoxCount);
+            this.panelOperation.Location = new System.Drawing.Point(447, 51);
+            this.panelOperation.Name = "panelOperation";
+            this.panelOperation.Size = new System.Drawing.Size(197, 172);
+            this.panelOperation.TabIndex = 21;
             // 
-            // buttonBuy
+            // labelCoinCountValue
             // 
-            this.buttonBuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonBuy.Location = new System.Drawing.Point(8, 176);
-            this.buttonBuy.Name = "buttonBuy";
-            this.buttonBuy.Size = new System.Drawing.Size(221, 34);
-            this.buttonBuy.TabIndex = 16;
-            this.buttonBuy.Text = "Купить";
-            this.buttonBuy.UseVisualStyleBackColor = true;
-            this.buttonBuy.Click += new System.EventHandler(this.buttonBuy_Click);
+            this.labelCoinCountValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelCoinCountValue.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelCoinCountValue.Location = new System.Drawing.Point(95, 25);
+            this.labelCoinCountValue.Name = "labelCoinCountValue";
+            this.labelCoinCountValue.Size = new System.Drawing.Size(96, 18);
+            this.labelCoinCountValue.TabIndex = 26;
+            this.labelCoinCountValue.Text = "9999";
+            this.labelCoinCountValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label12
+            // labelCost
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(8, 21);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(117, 24);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "Количество";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(8, 101);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(110, 24);
-            this.label13.TabIndex = 15;
-            this.label13.Text = "Стоймость";
-            // 
-            // trackBar1
-            // 
-            this.trackBar1.Location = new System.Drawing.Point(8, 53);
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(221, 45);
-            this.trackBar1.TabIndex = 13;
-            this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.None;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(390, 33);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(88, 24);
-            this.label14.TabIndex = 19;
-            this.label14.Text = "На счету";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(390, 9);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(74, 24);
-            this.label15.TabIndex = 20;
-            this.label15.Text = "Баланс";
+            this.labelCost.AutoSize = true;
+            this.labelCost.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelCost.Location = new System.Drawing.Point(3, 75);
+            this.labelCost.Name = "labelCost";
+            this.labelCost.Size = new System.Drawing.Size(83, 20);
+            this.labelCost.TabIndex = 28;
+            this.labelCost.Text = "Стоймость";
             // 
             // labelCoinCount
             // 
             this.labelCoinCount.AutoSize = true;
-            this.labelCoinCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelCoinCount.Location = new System.Drawing.Point(484, 33);
+            this.labelCoinCount.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelCoinCount.Location = new System.Drawing.Point(3, 24);
             this.labelCoinCount.Name = "labelCoinCount";
-            this.labelCoinCount.Size = new System.Drawing.Size(55, 24);
-            this.labelCoinCount.TabIndex = 17;
-            this.labelCoinCount.Text = "value";
+            this.labelCoinCount.Size = new System.Drawing.Size(54, 20);
+            this.labelCoinCount.TabIndex = 26;
+            this.labelCoinCount.Text = "Монет";
+            // 
+            // labelBalanceValue
+            // 
+            this.labelBalanceValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelBalanceValue.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelBalanceValue.Location = new System.Drawing.Point(95, 3);
+            this.labelBalanceValue.Name = "labelBalanceValue";
+            this.labelBalanceValue.Size = new System.Drawing.Size(96, 18);
+            this.labelBalanceValue.TabIndex = 26;
+            this.labelBalanceValue.Text = "9999 $";
+            this.labelBalanceValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // labelBuyingCount
+            // 
+            this.labelBuyingCount.AutoSize = true;
+            this.labelBuyingCount.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelBuyingCount.Location = new System.Drawing.Point(3, 46);
+            this.labelBuyingCount.Name = "labelBuyingCount";
+            this.labelBuyingCount.Size = new System.Drawing.Size(90, 20);
+            this.labelBuyingCount.TabIndex = 28;
+            this.labelBuyingCount.Text = "Количество";
+            // 
+            // buttonBuy
+            // 
+            this.buttonBuy.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonBuy.Location = new System.Drawing.Point(3, 134);
+            this.buttonBuy.Name = "buttonBuy";
+            this.buttonBuy.Size = new System.Drawing.Size(188, 28);
+            this.buttonBuy.TabIndex = 27;
+            this.buttonBuy.Text = "Купить/Продать";
+            this.buttonBuy.UseVisualStyleBackColor = true;
+            this.buttonBuy.Click += new System.EventHandler(this.buttonBuy_Click);
             // 
             // labelBalance
             // 
             this.labelBalance.AutoSize = true;
-            this.labelBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelBalance.Location = new System.Drawing.Point(470, 9);
+            this.labelBalance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelBalance.Location = new System.Drawing.Point(3, 3);
             this.labelBalance.Name = "labelBalance";
-            this.labelBalance.Size = new System.Drawing.Size(55, 24);
-            this.labelBalance.TabIndex = 18;
-            this.labelBalance.Text = "value";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.radioButtonSell);
-            this.panel1.Controls.Add(this.radioButtonBuy);
-            this.panel1.Controls.Add(this.textBoxCost);
-            this.panel1.Controls.Add(this.textBoxCount);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.trackBar1);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.buttonBuy);
-            this.panel1.Location = new System.Drawing.Point(376, 63);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(243, 218);
-            this.panel1.TabIndex = 21;
+            this.labelBalance.Size = new System.Drawing.Size(58, 20);
+            this.labelBalance.TabIndex = 26;
+            this.labelBalance.Text = "Баланс";
             // 
             // radioButtonSell
             // 
             this.radioButtonSell.AutoSize = true;
-            this.radioButtonSell.Location = new System.Drawing.Point(131, 136);
+            this.radioButtonSell.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButtonSell.Location = new System.Drawing.Point(105, 104);
             this.radioButtonSell.Name = "radioButtonSell";
-            this.radioButtonSell.Size = new System.Drawing.Size(71, 19);
+            this.radioButtonSell.Size = new System.Drawing.Size(86, 24);
             this.radioButtonSell.TabIndex = 20;
             this.radioButtonSell.TabStop = true;
             this.radioButtonSell.Text = "Продать";
@@ -185,9 +172,10 @@
             // radioButtonBuy
             // 
             this.radioButtonBuy.AutoSize = true;
-            this.radioButtonBuy.Location = new System.Drawing.Point(14, 136);
+            this.radioButtonBuy.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButtonBuy.Location = new System.Drawing.Point(11, 104);
             this.radioButtonBuy.Name = "radioButtonBuy";
-            this.radioButtonBuy.Size = new System.Drawing.Size(63, 19);
+            this.radioButtonBuy.Size = new System.Drawing.Size(75, 24);
             this.radioButtonBuy.TabIndex = 19;
             this.radioButtonBuy.TabStop = true;
             this.radioButtonBuy.Text = "Купить";
@@ -196,238 +184,280 @@
             // 
             // textBoxCost
             // 
-            this.textBoxCost.Location = new System.Drawing.Point(124, 102);
+            this.textBoxCost.Location = new System.Drawing.Point(103, 75);
             this.textBoxCost.Name = "textBoxCost";
-            this.textBoxCost.Size = new System.Drawing.Size(105, 23);
+            this.textBoxCost.Size = new System.Drawing.Size(88, 23);
             this.textBoxCost.TabIndex = 18;
             this.textBoxCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             this.textBoxCost.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxCost_KeyUp);
             // 
             // textBoxCount
             // 
-            this.textBoxCount.Location = new System.Drawing.Point(131, 22);
+            this.textBoxCount.Location = new System.Drawing.Point(103, 46);
             this.textBoxCount.Name = "textBoxCount";
-            this.textBoxCount.Size = new System.Drawing.Size(98, 23);
+            this.textBoxCount.Size = new System.Drawing.Size(88, 23);
             this.textBoxCount.TabIndex = 17;
             this.textBoxCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             this.textBoxCount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxCount_KeyUp);
             // 
             // labelUpdate
             // 
-            this.labelUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelUpdate.AutoSize = true;
-            this.labelUpdate.Location = new System.Drawing.Point(12, 336);
+            this.labelUpdate.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelUpdate.Location = new System.Drawing.Point(319, 24);
             this.labelUpdate.Name = "labelUpdate";
-            this.labelUpdate.Size = new System.Drawing.Size(143, 15);
+            this.labelUpdate.Size = new System.Drawing.Size(182, 20);
             this.labelUpdate.TabIndex = 22;
             this.labelUpdate.Text = "Последнее обновление :";
             // 
             // labelUpdateValue
             // 
-            this.labelUpdateValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelUpdateValue.AutoSize = true;
-            this.labelUpdateValue.Location = new System.Drawing.Point(161, 337);
+            this.labelUpdateValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelUpdateValue.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelUpdateValue.Location = new System.Drawing.Point(507, 24);
             this.labelUpdateValue.Name = "labelUpdateValue";
-            this.labelUpdateValue.Size = new System.Drawing.Size(106, 15);
+            this.labelUpdateValue.Size = new System.Drawing.Size(137, 18);
             this.labelUpdateValue.TabIndex = 23;
             this.labelUpdateValue.Text = "99.99.9999 99:99:99";
+            this.labelUpdateValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelCurrentPrice
             // 
             this.labelCurrentPrice.AutoSize = true;
-            this.labelCurrentPrice.Location = new System.Drawing.Point(12, 48);
+            this.labelCurrentPrice.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelCurrentPrice.Location = new System.Drawing.Point(122, 23);
             this.labelCurrentPrice.Name = "labelCurrentPrice";
-            this.labelCurrentPrice.Size = new System.Drawing.Size(41, 15);
+            this.labelCurrentPrice.Size = new System.Drawing.Size(52, 20);
             this.labelCurrentPrice.TabIndex = 24;
             this.labelCurrentPrice.Text = "Цена :";
             // 
             // labelCurrentPriceValue
             // 
             this.labelCurrentPriceValue.AutoSize = true;
-            this.labelCurrentPriceValue.Location = new System.Drawing.Point(59, 48);
+            this.labelCurrentPriceValue.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelCurrentPriceValue.Location = new System.Drawing.Point(180, 24);
             this.labelCurrentPriceValue.Name = "labelCurrentPriceValue";
-            this.labelCurrentPriceValue.Size = new System.Drawing.Size(40, 15);
+            this.labelCurrentPriceValue.Size = new System.Drawing.Size(53, 20);
             this.labelCurrentPriceValue.TabIndex = 24;
             this.labelCurrentPriceValue.Text = "9999 $";
             // 
             // labelHighDay
             // 
             this.labelHighDay.AutoSize = true;
-            this.labelHighDay.Location = new System.Drawing.Point(12, 88);
+            this.labelHighDay.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelHighDay.Location = new System.Drawing.Point(4, 3);
             this.labelHighDay.Name = "labelHighDay";
-            this.labelHighDay.Size = new System.Drawing.Size(36, 15);
+            this.labelHighDay.Size = new System.Drawing.Size(117, 20);
             this.labelHighDay.TabIndex = 24;
-            this.labelHighDay.Text = "Макс";
+            this.labelHighDay.Text = "Максимум 24ч :";
             // 
             // labelHighDayValue
             // 
-            this.labelHighDayValue.AutoSize = true;
-            this.labelHighDayValue.Location = new System.Drawing.Point(102, 88);
+            this.labelHighDayValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelHighDayValue.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelHighDayValue.Location = new System.Drawing.Point(123, 4);
             this.labelHighDayValue.Name = "labelHighDayValue";
-            this.labelHighDayValue.Size = new System.Drawing.Size(40, 15);
+            this.labelHighDayValue.Size = new System.Drawing.Size(69, 18);
             this.labelHighDayValue.TabIndex = 24;
             this.labelHighDayValue.Text = "9999 $";
+            this.labelHighDayValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelMinDay
             // 
             this.labelMinDay.AutoSize = true;
-            this.labelMinDay.Location = new System.Drawing.Point(12, 103);
+            this.labelMinDay.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelMinDay.Location = new System.Drawing.Point(4, 23);
             this.labelMinDay.Name = "labelMinDay";
-            this.labelMinDay.Size = new System.Drawing.Size(32, 15);
+            this.labelMinDay.Size = new System.Drawing.Size(113, 20);
             this.labelMinDay.TabIndex = 24;
-            this.labelMinDay.Text = "Мин";
+            this.labelMinDay.Text = "Минимум 24ч :";
             // 
             // labelMinDayValue
             // 
-            this.labelMinDayValue.AutoSize = true;
-            this.labelMinDayValue.Location = new System.Drawing.Point(102, 103);
+            this.labelMinDayValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelMinDayValue.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelMinDayValue.Location = new System.Drawing.Point(123, 25);
             this.labelMinDayValue.Name = "labelMinDayValue";
-            this.labelMinDayValue.Size = new System.Drawing.Size(40, 15);
+            this.labelMinDayValue.Size = new System.Drawing.Size(69, 18);
             this.labelMinDayValue.TabIndex = 24;
             this.labelMinDayValue.Text = "9999 $";
+            this.labelMinDayValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelPriceChangeDayPercent
             // 
             this.labelPriceChangeDayPercent.AutoSize = true;
-            this.labelPriceChangeDayPercent.Location = new System.Drawing.Point(12, 133);
+            this.labelPriceChangeDayPercent.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPriceChangeDayPercent.Location = new System.Drawing.Point(6, 63);
             this.labelPriceChangeDayPercent.Name = "labelPriceChangeDayPercent";
-            this.labelPriceChangeDayPercent.Size = new System.Drawing.Size(59, 15);
+            this.labelPriceChangeDayPercent.Size = new System.Drawing.Size(72, 20);
             this.labelPriceChangeDayPercent.TabIndex = 24;
             this.labelPriceChangeDayPercent.Text = "За сутки :";
             // 
             // labelPriceChangeDayPercerntValue
             // 
-            this.labelPriceChangeDayPercerntValue.AutoSize = true;
-            this.labelPriceChangeDayPercerntValue.Location = new System.Drawing.Point(107, 133);
+            this.labelPriceChangeDayPercerntValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelPriceChangeDayPercerntValue.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPriceChangeDayPercerntValue.Location = new System.Drawing.Point(123, 64);
             this.labelPriceChangeDayPercerntValue.Name = "labelPriceChangeDayPercerntValue";
-            this.labelPriceChangeDayPercerntValue.Size = new System.Drawing.Size(35, 15);
+            this.labelPriceChangeDayPercerntValue.Size = new System.Drawing.Size(69, 18);
             this.labelPriceChangeDayPercerntValue.TabIndex = 24;
             this.labelPriceChangeDayPercerntValue.Text = "999%";
+            this.labelPriceChangeDayPercerntValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelPriceChangeHourPercent
             // 
             this.labelPriceChangeHourPercent.AutoSize = true;
-            this.labelPriceChangeHourPercent.Location = new System.Drawing.Point(12, 118);
+            this.labelPriceChangeHourPercent.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPriceChangeHourPercent.Location = new System.Drawing.Point(6, 43);
             this.labelPriceChangeHourPercent.Name = "labelPriceChangeHourPercent";
-            this.labelPriceChangeHourPercent.Size = new System.Drawing.Size(48, 15);
+            this.labelPriceChangeHourPercent.Size = new System.Drawing.Size(59, 20);
             this.labelPriceChangeHourPercent.TabIndex = 24;
             this.labelPriceChangeHourPercent.Text = "За час :";
             // 
             // labelPriceChangeHourPercentValue
             // 
-            this.labelPriceChangeHourPercentValue.AutoSize = true;
-            this.labelPriceChangeHourPercentValue.Location = new System.Drawing.Point(107, 118);
+            this.labelPriceChangeHourPercentValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelPriceChangeHourPercentValue.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPriceChangeHourPercentValue.Location = new System.Drawing.Point(123, 44);
             this.labelPriceChangeHourPercentValue.Name = "labelPriceChangeHourPercentValue";
-            this.labelPriceChangeHourPercentValue.Size = new System.Drawing.Size(35, 15);
+            this.labelPriceChangeHourPercentValue.Size = new System.Drawing.Size(69, 18);
             this.labelPriceChangeHourPercentValue.TabIndex = 24;
             this.labelPriceChangeHourPercentValue.Text = "999%";
+            this.labelPriceChangeHourPercentValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelPriceChangeTwoWeekPercent
             // 
             this.labelPriceChangeTwoWeekPercent.AutoSize = true;
-            this.labelPriceChangeTwoWeekPercent.Location = new System.Drawing.Point(12, 164);
+            this.labelPriceChangeTwoWeekPercent.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPriceChangeTwoWeekPercent.Location = new System.Drawing.Point(6, 103);
             this.labelPriceChangeTwoWeekPercent.Name = "labelPriceChangeTwoWeekPercent";
-            this.labelPriceChangeTwoWeekPercent.Size = new System.Drawing.Size(89, 15);
+            this.labelPriceChangeTwoWeekPercent.Size = new System.Drawing.Size(114, 20);
             this.labelPriceChangeTwoWeekPercent.TabIndex = 24;
             this.labelPriceChangeTwoWeekPercent.Text = "За две недели :";
             // 
             // labelPriceChangeTwoWeekPercentValue
             // 
-            this.labelPriceChangeTwoWeekPercentValue.AutoSize = true;
-            this.labelPriceChangeTwoWeekPercentValue.Location = new System.Drawing.Point(107, 164);
+            this.labelPriceChangeTwoWeekPercentValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelPriceChangeTwoWeekPercentValue.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPriceChangeTwoWeekPercentValue.Location = new System.Drawing.Point(123, 104);
             this.labelPriceChangeTwoWeekPercentValue.Name = "labelPriceChangeTwoWeekPercentValue";
-            this.labelPriceChangeTwoWeekPercentValue.Size = new System.Drawing.Size(35, 15);
+            this.labelPriceChangeTwoWeekPercentValue.Size = new System.Drawing.Size(69, 18);
             this.labelPriceChangeTwoWeekPercentValue.TabIndex = 24;
             this.labelPriceChangeTwoWeekPercentValue.Text = "999%";
+            this.labelPriceChangeTwoWeekPercentValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelPriceChangeWeekPercent
             // 
             this.labelPriceChangeWeekPercent.AutoSize = true;
-            this.labelPriceChangeWeekPercent.Location = new System.Drawing.Point(12, 149);
+            this.labelPriceChangeWeekPercent.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPriceChangeWeekPercent.Location = new System.Drawing.Point(6, 83);
             this.labelPriceChangeWeekPercent.Name = "labelPriceChangeWeekPercent";
-            this.labelPriceChangeWeekPercent.Size = new System.Drawing.Size(71, 15);
+            this.labelPriceChangeWeekPercent.Size = new System.Drawing.Size(89, 20);
             this.labelPriceChangeWeekPercent.TabIndex = 24;
             this.labelPriceChangeWeekPercent.Text = "За неделю :";
             // 
             // labelPriceChangeWeekPercentValue
             // 
-            this.labelPriceChangeWeekPercentValue.AutoSize = true;
-            this.labelPriceChangeWeekPercentValue.Location = new System.Drawing.Point(107, 149);
+            this.labelPriceChangeWeekPercentValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelPriceChangeWeekPercentValue.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPriceChangeWeekPercentValue.Location = new System.Drawing.Point(123, 84);
             this.labelPriceChangeWeekPercentValue.Name = "labelPriceChangeWeekPercentValue";
-            this.labelPriceChangeWeekPercentValue.Size = new System.Drawing.Size(35, 15);
+            this.labelPriceChangeWeekPercentValue.Size = new System.Drawing.Size(69, 18);
             this.labelPriceChangeWeekPercentValue.TabIndex = 24;
             this.labelPriceChangeWeekPercentValue.Text = "999%";
+            this.labelPriceChangeWeekPercentValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelPriceChangeMonthPercent
             // 
             this.labelPriceChangeMonthPercent.AutoSize = true;
-            this.labelPriceChangeMonthPercent.Location = new System.Drawing.Point(12, 179);
+            this.labelPriceChangeMonthPercent.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPriceChangeMonthPercent.Location = new System.Drawing.Point(7, 123);
             this.labelPriceChangeMonthPercent.Name = "labelPriceChangeMonthPercent";
-            this.labelPriceChangeMonthPercent.Size = new System.Drawing.Size(63, 15);
+            this.labelPriceChangeMonthPercent.Size = new System.Drawing.Size(79, 20);
             this.labelPriceChangeMonthPercent.TabIndex = 24;
             this.labelPriceChangeMonthPercent.Text = "За месяц :";
             // 
             // labelPriceChangeMonthPercentValue
             // 
-            this.labelPriceChangeMonthPercentValue.AutoSize = true;
-            this.labelPriceChangeMonthPercentValue.Location = new System.Drawing.Point(107, 179);
+            this.labelPriceChangeMonthPercentValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelPriceChangeMonthPercentValue.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPriceChangeMonthPercentValue.Location = new System.Drawing.Point(123, 125);
             this.labelPriceChangeMonthPercentValue.Name = "labelPriceChangeMonthPercentValue";
-            this.labelPriceChangeMonthPercentValue.Size = new System.Drawing.Size(35, 15);
+            this.labelPriceChangeMonthPercentValue.Size = new System.Drawing.Size(69, 18);
             this.labelPriceChangeMonthPercentValue.TabIndex = 24;
             this.labelPriceChangeMonthPercentValue.Text = "999%";
+            this.labelPriceChangeMonthPercentValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panelChart
+            // 
+            this.panelChart.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelChart.Location = new System.Drawing.Point(12, 51);
+            this.panelChart.Name = "panelChart";
+            this.panelChart.Size = new System.Drawing.Size(429, 330);
+            this.panelChart.TabIndex = 25;
+            // 
+            // panelHistory
+            // 
+            this.panelHistory.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelHistory.Controls.Add(this.labelHighDay);
+            this.panelHistory.Controls.Add(this.labelMinDay);
+            this.panelHistory.Controls.Add(this.labelPriceChangeDayPercent);
+            this.panelHistory.Controls.Add(this.labelPriceChangeHourPercentValue);
+            this.panelHistory.Controls.Add(this.labelPriceChangeTwoWeekPercent);
+            this.panelHistory.Controls.Add(this.labelPriceChangeWeekPercentValue);
+            this.panelHistory.Controls.Add(this.labelPriceChangeMonthPercent);
+            this.panelHistory.Controls.Add(this.labelPriceChangeMonthPercentValue);
+            this.panelHistory.Controls.Add(this.labelPriceChangeWeekPercent);
+            this.panelHistory.Controls.Add(this.labelPriceChangeTwoWeekPercentValue);
+            this.panelHistory.Controls.Add(this.labelPriceChangeHourPercent);
+            this.panelHistory.Controls.Add(this.labelPriceChangeDayPercerntValue);
+            this.panelHistory.Controls.Add(this.labelHighDayValue);
+            this.panelHistory.Controls.Add(this.labelMinDayValue);
+            this.panelHistory.Location = new System.Drawing.Point(447, 229);
+            this.panelHistory.Name = "panelHistory";
+            this.panelHistory.Size = new System.Drawing.Size(197, 152);
+            this.panelHistory.TabIndex = 26;
+            // 
+            // coinComboBox
+            // 
+            this.coinComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.coinComboBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.coinComboBox.FormattingEnabled = true;
+            this.coinComboBox.Location = new System.Drawing.Point(12, 17);
+            this.coinComboBox.Name = "coinComboBox";
+            this.coinComboBox.Size = new System.Drawing.Size(104, 28);
+            this.coinComboBox.TabIndex = 27;
+            this.coinComboBox.SelectedIndexChanged += new System.EventHandler(this.coinComboBox_SelectedIndexChanged);
             // 
             // InfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 360);
+            this.ClientSize = new System.Drawing.Size(656, 390);
+            this.Controls.Add(this.coinComboBox);
+            this.Controls.Add(this.panelHistory);
+            this.Controls.Add(this.panelChart);
             this.Controls.Add(this.labelCurrentPriceValue);
-            this.Controls.Add(this.labelPriceChangeHourPercentValue);
-            this.Controls.Add(this.labelPriceChangeWeekPercentValue);
-            this.Controls.Add(this.labelPriceChangeMonthPercentValue);
-            this.Controls.Add(this.labelPriceChangeTwoWeekPercentValue);
-            this.Controls.Add(this.labelPriceChangeDayPercerntValue);
-            this.Controls.Add(this.labelMinDayValue);
-            this.Controls.Add(this.labelHighDayValue);
-            this.Controls.Add(this.labelPriceChangeHourPercent);
-            this.Controls.Add(this.labelPriceChangeWeekPercent);
-            this.Controls.Add(this.labelPriceChangeMonthPercent);
-            this.Controls.Add(this.labelPriceChangeTwoWeekPercent);
-            this.Controls.Add(this.labelPriceChangeDayPercent);
-            this.Controls.Add(this.labelMinDay);
-            this.Controls.Add(this.labelHighDay);
             this.Controls.Add(this.labelCurrentPrice);
             this.Controls.Add(this.labelUpdateValue);
             this.Controls.Add(this.labelUpdate);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.labelCoinCount);
-            this.Controls.Add(this.labelBalance);
-            this.Controls.Add(this.coinComboBox);
+            this.Controls.Add(this.panelOperation);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InfoForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainWindow_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelOperation.ResumeLayout(false);
+            this.panelOperation.PerformLayout();
+            this.panelHistory.ResumeLayout(false);
+            this.panelHistory.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private ComboBox coinComboBox;
-        private Button buttonBuy;
-        private Label label12;
-        private Label label13;
-        private TrackBar trackBar1;
-        private Label label14;
-        private Label label15;
-        private Label labelCoinCount;
-        private Label labelBalance;
-        private Panel panel1;
+        private Panel panelOperation;
         private TextBox textBoxCost;
         private TextBox textBoxCount;
         private RadioButton radioButtonSell;
@@ -450,5 +480,15 @@
         private Label labelPriceChangeWeekPercentValue;
         private Label labelPriceChangeMonthPercent;
         private Label labelPriceChangeMonthPercentValue;
+        private Panel panelChart;
+        private Label labelBalance;
+        private Label labelCost;
+        private Label labelBuyingCount;
+        private Button buttonBuy;
+        private Label labelBalanceValue;
+        private Label labelCoinCount;
+        private Label labelCoinCountValue;
+        private Panel panelHistory;
+        private ComboBox coinComboBox;
     }
 }

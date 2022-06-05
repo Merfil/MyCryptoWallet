@@ -24,40 +24,119 @@ namespace MyCryptoWallet.WF
         private void WalletForm_Load(object sender, EventArgs e)
         {
             coinComboBox.Items.Add("All");
-            foreach (var item in Enum.GetValues(typeof(ApiEnum.Coin)))
+            foreach (var coin in Data.Coins)
             {
-                coinComboBox.Items.Add(item);
+                //if (coin.Id != "tether")
+                    coinComboBox.Items.Add(coin.Name);
             }
             coinComboBox.SelectedIndex = 0;
+
+            dataGridViewWallets.DataSource = historyController.Wallets;
+            DataGridColumnStyle();
+
+            var backColor = Color.FromKnownColor(KnownColor.Control);
+            var gridColor = Color.Black;
+            var cellBackColor = Color.LightGray;
+            DataGridStyle(dataGridViewHistory, backColor, gridColor, cellBackColor);
+            DataGridStyle(dataGridViewWallets, backColor, gridColor, cellBackColor);
         }
 
         private async void coinComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var coin = coinComboBox.Text;
             var histories = new List<History>();
-            if (coin != "All")
-                histories = historyController.GetHistories(coin);
+            var coin = Data.Coins[coinComboBox.SelectedIndex];
+            if (coinComboBox.Text != "All")
+            {
+                coin = Data.Coins[coinComboBox.SelectedIndex - 1];
+                histories = historyController.GetHistories(coin.Id);
+            }
             else
+            {
                 histories = historyController.GetHistories();
-            dataGridView1.DataSource = histories;
-
-            var buyingHistory = histories.Where(w => w.IsBuing == true);
-            double buyingSum = 0;
-            foreach (var item in buyingHistory)
-            {
-                buyingSum += item.Price * item.Count + item.Fees;
             }
-            spentMoney.Text = buyingSum.ToString();
+            dataGridViewHistory.DataSource = histories;
 
-            var sellingHistory = histories.Where(w => w.IsBuing == false);
-            double sellingSum = 0;
-            foreach (var item in sellingHistory)
+            labelSpentMoneyValue.Text = CoinValue(histories, true).ToString("#,0.##") + " $";
+            labelEarnedMoneyValue.Text = CoinValue(histories, false).ToString("#,0.##") + " $";
+
+            if (coinComboBox.Text != "All")
             {
-                sellingSum += item.Price * item.Count - item.Fees;
+                labelAmountInCountValue.Text = MoneyFromCoin(coin).ToString("#,0.##") + " $";
+                labelTotalValue.Text = (CoinValue(histories, false) + MoneyFromCoin(coin) - CoinValue(histories, true)).ToString("#,0.##") + " $";
             }
-            earnedMoney.Text = sellingSum.ToString();
+            else
+            {
+                labelAmountInCountValue.Text = MoneyFromCoin().ToString("#,0.##") + " $";
+                labelTotalValue.Text = (CoinValue(histories, false) + MoneyFromCoin() - CoinValue(histories, true)).ToString("#,0.##") + " $";
+            }
+        }
 
-            //coinValue = 
+        private double CoinValue(List<History> histories, bool isBuing)
+        {
+            var history = histories.Where(w => w.IsBuing == isBuing);
+            double value = 0;
+            foreach (var item in history)
+            {
+                if(isBuing)
+                    value += item.Price * item.Count + item.Fees;
+                else
+                    value += item.Price * item.Count - item.Fees;
+            }
+            if (isBuing)
+                return value;
+            else
+                return value;
+        }
+
+        private double MoneyFromCoin()
+        {
+            double sum = 0;
+            foreach (var coin in Data.Coins)
+            {
+                var wallet = historyController.Wallets.Single(w => w.CoinId == coin.Id);
+                if (wallet.CoinId == "tether")
+                    break;
+                var price = coin.CurrentPrice * wallet.Count - historyController.GetFees(coin.CurrentPrice, wallet.Count);
+                sum += price;
+            }
+            return sum;
+        }
+
+        private double MoneyFromCoin(Coin coin)
+        {
+            var wallet = historyController.Wallets.Single(w => w.CoinId == coin.Id);
+            return (coin.CurrentPrice * wallet.Count - historyController.GetFees(coin.CurrentPrice, wallet.Count));
+        }
+
+        private void DataGridColumnStyle()
+        {
+            dataGridViewWallets.Columns[0].Visible = false;
+            dataGridViewWallets.Columns[1].HeaderText = "Название";
+            dataGridViewWallets.Columns[2].Visible = false;
+            dataGridViewWallets.Columns[3].HeaderText = "Количество";
+
+            dataGridViewHistory.Columns[0].Visible = false;
+            dataGridViewHistory.Columns[1].HeaderText = "Дата и время";
+            dataGridViewHistory.Columns[2].Visible = false;
+            dataGridViewHistory.Columns[3].HeaderText = "Валюта";
+            dataGridViewHistory.Columns[4].HeaderText = "Цена";
+            dataGridViewHistory.Columns[5].HeaderText = "Количество";
+            dataGridViewHistory.Columns[6].HeaderText = "Комиссия";
+            dataGridViewHistory.Columns[7].HeaderText = "Покупка";
+        }
+        private void DataGridStyle(DataGridView dgv, Color backColor, Color gridColor, Color cellBackColor)
+        {
+            dgv.BackgroundColor = backColor;
+            dgv.GridColor = gridColor;
+            dgv.DefaultCellStyle.BackColor = backColor;
+            dgv.DefaultCellStyle.SelectionBackColor = dgv.DefaultCellStyle.BackColor;
+            dgv.DefaultCellStyle.SelectionForeColor = dgv.DefaultCellStyle.ForeColor;
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = cellBackColor;
+            dgv.ColumnHeadersDefaultCellStyle.SelectionBackColor = dgv.ColumnHeadersDefaultCellStyle.BackColor;
+            dgv.ColumnHeadersDefaultCellStyle.SelectionForeColor = dgv.ColumnHeadersDefaultCellStyle.ForeColor;
+            dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+
+            dgv.EnableHeadersVisualStyles = false;
         }
     }
 }

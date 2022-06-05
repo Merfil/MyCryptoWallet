@@ -21,9 +21,9 @@ namespace MyCryptoWallet.WF
 
         private void AdminForm_Load(object sender, EventArgs e)
         {
-            foreach (var item in Enum.GetValues(typeof(ApiEnum.Coin)))
+            foreach (var coin in Data.Coins)
             {
-                coinComboBox.Items.Add(item);
+                coinComboBox.Items.Add(coin.Name);
             }
             coinComboBox.SelectedIndex = 0;
 
@@ -33,9 +33,10 @@ namespace MyCryptoWallet.WF
         private void button1_Click(object sender, EventArgs e)
         {
             HistoryController historyController = new HistoryController();
-            historyController.ChangeValue(coinComboBox.Text, Convert.ToDouble(textBox1.Text));
+            historyController.ChangeValue(Data.Coins[coinComboBox.SelectedIndex].Id, Convert.ToDouble(textBox1.Text));
 
             UpdateDGV();
+            textBox1.Text = "";
         }
 
         private void UpdateDGV()
