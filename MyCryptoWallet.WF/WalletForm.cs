@@ -39,7 +39,7 @@ namespace MyCryptoWallet.WF
             var cellBackColor = Color.LightGray;
         }
 
-        private async void coinComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void coinComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var histories = new List<History>();
             var coin = Data.Coins[coinComboBox.SelectedIndex];

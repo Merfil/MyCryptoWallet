@@ -31,6 +31,7 @@ namespace MyCryptoWallet.WF
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
+            PanelNav(sender as Button);
             Application.Exit();
         }
 
@@ -47,6 +48,8 @@ namespace MyCryptoWallet.WF
 
             Data.Coins = apiController.GetResponse();
             historyController.CreateWallets();
+
+            buttonWallet_Click(buttonWallet, null);
         }
 
         private void OpenForm(Form form, string text)

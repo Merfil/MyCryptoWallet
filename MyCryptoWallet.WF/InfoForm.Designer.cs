@@ -224,7 +224,7 @@
             this.labelUpdate.AutoSize = true;
             this.labelUpdate.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.labelUpdate.Location = new System.Drawing.Point(319, 24);
+            this.labelUpdate.Location = new System.Drawing.Point(319, 28);
             this.labelUpdate.Name = "labelUpdate";
             this.labelUpdate.Size = new System.Drawing.Size(182, 20);
             this.labelUpdate.TabIndex = 22;
@@ -235,7 +235,7 @@
             this.labelUpdateValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelUpdateValue.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelUpdateValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.labelUpdateValue.Location = new System.Drawing.Point(507, 24);
+            this.labelUpdateValue.Location = new System.Drawing.Point(507, 30);
             this.labelUpdateValue.Name = "labelUpdateValue";
             this.labelUpdateValue.Size = new System.Drawing.Size(137, 18);
             this.labelUpdateValue.TabIndex = 23;
@@ -247,7 +247,7 @@
             this.labelCurrentPrice.AutoSize = true;
             this.labelCurrentPrice.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelCurrentPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.labelCurrentPrice.Location = new System.Drawing.Point(122, 23);
+            this.labelCurrentPrice.Location = new System.Drawing.Point(122, 28);
             this.labelCurrentPrice.Name = "labelCurrentPrice";
             this.labelCurrentPrice.Size = new System.Drawing.Size(51, 20);
             this.labelCurrentPrice.TabIndex = 24;
@@ -258,7 +258,7 @@
             this.labelCurrentPriceValue.AutoSize = true;
             this.labelCurrentPriceValue.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelCurrentPriceValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.labelCurrentPriceValue.Location = new System.Drawing.Point(180, 24);
+            this.labelCurrentPriceValue.Location = new System.Drawing.Point(179, 28);
             this.labelCurrentPriceValue.Name = "labelCurrentPriceValue";
             this.labelCurrentPriceValue.Size = new System.Drawing.Size(53, 20);
             this.labelCurrentPriceValue.TabIndex = 24;
@@ -460,7 +460,7 @@
             // coinComboBox
             // 
             this.coinComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.coinComboBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.coinComboBox.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.coinComboBox.FormattingEnabled = true;
             this.coinComboBox.Location = new System.Drawing.Point(12, 17);
             this.coinComboBox.Name = "coinComboBox";
