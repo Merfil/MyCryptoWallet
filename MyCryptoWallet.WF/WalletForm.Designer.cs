@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.coinComboBox = new System.Windows.Forms.ComboBox();
             this.dataGridViewHistory = new System.Windows.Forms.DataGridView();
             this.labelEarnedMoneyValue = new System.Windows.Forms.Label();
@@ -54,7 +56,9 @@
             // 
             // coinComboBox
             // 
+            this.coinComboBox.BackColor = System.Drawing.SystemColors.Window;
             this.coinComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.coinComboBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.coinComboBox.FormattingEnabled = true;
             this.coinComboBox.Location = new System.Drawing.Point(12, 12);
             this.coinComboBox.Name = "coinComboBox";
@@ -71,22 +75,44 @@
             this.dataGridViewHistory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridViewHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewHistory.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.dataGridViewHistory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewHistory.Location = new System.Drawing.Point(8, 28);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewHistory.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewHistory.EnableHeadersVisualStyles = false;
+            this.dataGridViewHistory.GridColor = System.Drawing.Color.Black;
+            this.dataGridViewHistory.Location = new System.Drawing.Point(8, 33);
             this.dataGridViewHistory.Name = "dataGridViewHistory";
             this.dataGridViewHistory.RowHeadersVisible = false;
             this.dataGridViewHistory.RowTemplate.Height = 25;
-            this.dataGridViewHistory.Size = new System.Drawing.Size(614, 133);
+            this.dataGridViewHistory.Size = new System.Drawing.Size(614, 128);
             this.dataGridViewHistory.TabIndex = 4;
             // 
             // labelEarnedMoneyValue
             // 
             this.labelEarnedMoneyValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelEarnedMoneyValue.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelEarnedMoneyValue.Location = new System.Drawing.Point(183, 65);
+            this.labelEarnedMoneyValue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.labelEarnedMoneyValue.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelEarnedMoneyValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.labelEarnedMoneyValue.Location = new System.Drawing.Point(147, 65);
             this.labelEarnedMoneyValue.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.labelEarnedMoneyValue.Name = "labelEarnedMoneyValue";
-            this.labelEarnedMoneyValue.Size = new System.Drawing.Size(206, 25);
+            this.labelEarnedMoneyValue.Size = new System.Drawing.Size(242, 25);
             this.labelEarnedMoneyValue.TabIndex = 1;
             this.labelEarnedMoneyValue.Text = "value";
             this.labelEarnedMoneyValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -94,11 +120,13 @@
             // labelAmountInCountValue
             // 
             this.labelAmountInCountValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelAmountInCountValue.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelAmountInCountValue.Location = new System.Drawing.Point(183, 95);
+            this.labelAmountInCountValue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.labelAmountInCountValue.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelAmountInCountValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.labelAmountInCountValue.Location = new System.Drawing.Point(147, 95);
             this.labelAmountInCountValue.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.labelAmountInCountValue.Name = "labelAmountInCountValue";
-            this.labelAmountInCountValue.Size = new System.Drawing.Size(206, 25);
+            this.labelAmountInCountValue.Size = new System.Drawing.Size(242, 25);
             this.labelAmountInCountValue.TabIndex = 1;
             this.labelAmountInCountValue.Text = "value";
             this.labelAmountInCountValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -106,11 +134,13 @@
             // labelTotalValue
             // 
             this.labelTotalValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTotalValue.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelTotalValue.Location = new System.Drawing.Point(183, 125);
+            this.labelTotalValue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.labelTotalValue.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelTotalValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.labelTotalValue.Location = new System.Drawing.Point(147, 125);
             this.labelTotalValue.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.labelTotalValue.Name = "labelTotalValue";
-            this.labelTotalValue.Size = new System.Drawing.Size(206, 25);
+            this.labelTotalValue.Size = new System.Drawing.Size(242, 25);
             this.labelTotalValue.TabIndex = 5;
             this.labelTotalValue.Text = "value";
             this.labelTotalValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -124,17 +154,24 @@
             this.dataGridViewWallets.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridViewWallets.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewWallets.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.dataGridViewWallets.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridViewWallets.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewWallets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewWallets.Location = new System.Drawing.Point(8, 28);
+            this.dataGridViewWallets.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewWallets.EnableHeadersVisualStyles = false;
+            this.dataGridViewWallets.GridColor = System.Drawing.Color.Black;
+            this.dataGridViewWallets.Location = new System.Drawing.Point(8, 33);
             this.dataGridViewWallets.Name = "dataGridViewWallets";
             this.dataGridViewWallets.RowHeadersVisible = false;
             this.dataGridViewWallets.RowTemplate.Height = 25;
             this.dataGridViewWallets.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewWallets.Size = new System.Drawing.Size(210, 122);
+            this.dataGridViewWallets.Size = new System.Drawing.Size(210, 117);
             this.dataGridViewWallets.TabIndex = 6;
             // 
             // panelHistory
             // 
+            this.panelHistory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.panelHistory.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelHistory.Controls.Add(this.labelHistory);
             this.panelHistory.Controls.Add(this.dataGridViewHistory);
@@ -147,15 +184,17 @@
             // labelHistory
             // 
             this.labelHistory.AutoSize = true;
-            this.labelHistory.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelHistory.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelHistory.ForeColor = System.Drawing.Color.White;
             this.labelHistory.Location = new System.Drawing.Point(8, 5);
             this.labelHistory.Name = "labelHistory";
-            this.labelHistory.Size = new System.Drawing.Size(68, 20);
+            this.labelHistory.Size = new System.Drawing.Size(95, 25);
             this.labelHistory.TabIndex = 5;
             this.labelHistory.Text = "История";
             // 
             // panelWallets
             // 
+            this.panelWallets.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.panelWallets.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelWallets.Controls.Add(this.labelWallets);
             this.panelWallets.Controls.Add(this.dataGridViewWallets);
@@ -168,15 +207,17 @@
             // labelWallets
             // 
             this.labelWallets.AutoSize = true;
-            this.labelWallets.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelWallets.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelWallets.ForeColor = System.Drawing.Color.White;
             this.labelWallets.Location = new System.Drawing.Point(8, 5);
             this.labelWallets.Name = "labelWallets";
-            this.labelWallets.Size = new System.Drawing.Size(58, 20);
+            this.labelWallets.Size = new System.Drawing.Size(82, 25);
             this.labelWallets.TabIndex = 0;
             this.labelWallets.Text = "Баланс";
             // 
             // panelStats
             // 
+            this.panelStats.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.panelStats.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelStats.Controls.Add(this.labelSpentMoneyValue);
             this.panelStats.Controls.Add(this.labelTotal);
@@ -196,11 +237,13 @@
             // labelSpentMoneyValue
             // 
             this.labelSpentMoneyValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelSpentMoneyValue.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelSpentMoneyValue.Location = new System.Drawing.Point(183, 35);
+            this.labelSpentMoneyValue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.labelSpentMoneyValue.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelSpentMoneyValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.labelSpentMoneyValue.Location = new System.Drawing.Point(147, 35);
             this.labelSpentMoneyValue.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.labelSpentMoneyValue.Name = "labelSpentMoneyValue";
-            this.labelSpentMoneyValue.Size = new System.Drawing.Size(206, 25);
+            this.labelSpentMoneyValue.Size = new System.Drawing.Size(242, 25);
             this.labelSpentMoneyValue.TabIndex = 8;
             this.labelSpentMoneyValue.Text = "value";
             this.labelSpentMoneyValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -208,54 +251,59 @@
             // labelTotal
             // 
             this.labelTotal.AutoSize = true;
-            this.labelTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelTotal.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
             this.labelTotal.Location = new System.Drawing.Point(13, 125);
             this.labelTotal.Margin = new System.Windows.Forms.Padding(8, 5, 3, 5);
             this.labelTotal.Name = "labelTotal";
-            this.labelTotal.Size = new System.Drawing.Size(54, 25);
+            this.labelTotal.Size = new System.Drawing.Size(55, 25);
             this.labelTotal.TabIndex = 7;
             this.labelTotal.Text = "Итог";
             // 
             // labelAmountInCount
             // 
             this.labelAmountInCount.AutoSize = true;
-            this.labelAmountInCount.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelAmountInCount.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelAmountInCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
             this.labelAmountInCount.Location = new System.Drawing.Point(13, 95);
             this.labelAmountInCount.Margin = new System.Windows.Forms.Padding(8, 5, 3, 0);
             this.labelAmountInCount.Name = "labelAmountInCount";
-            this.labelAmountInCount.Size = new System.Drawing.Size(165, 25);
+            this.labelAmountInCount.Size = new System.Drawing.Size(97, 25);
             this.labelAmountInCount.TabIndex = 7;
-            this.labelAmountInCount.Text = "Стоймость монет";
+            this.labelAmountInCount.Text = "Монет на";
             // 
             // labelEarnedMoney
             // 
             this.labelEarnedMoney.AutoSize = true;
-            this.labelEarnedMoney.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelEarnedMoney.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelEarnedMoney.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
             this.labelEarnedMoney.Location = new System.Drawing.Point(13, 65);
             this.labelEarnedMoney.Margin = new System.Windows.Forms.Padding(8, 5, 3, 0);
             this.labelEarnedMoney.Name = "labelEarnedMoney";
-            this.labelEarnedMoney.Size = new System.Drawing.Size(156, 25);
+            this.labelEarnedMoney.Size = new System.Drawing.Size(98, 25);
             this.labelEarnedMoney.TabIndex = 7;
-            this.labelEarnedMoney.Text = "Получено денег";
+            this.labelEarnedMoney.Text = "Получено";
             // 
             // labelSpentMoney
             // 
             this.labelSpentMoney.AutoSize = true;
-            this.labelSpentMoney.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelSpentMoney.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelSpentMoney.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
             this.labelSpentMoney.Location = new System.Drawing.Point(13, 35);
             this.labelSpentMoney.Margin = new System.Windows.Forms.Padding(8, 10, 3, 0);
             this.labelSpentMoney.Name = "labelSpentMoney";
-            this.labelSpentMoney.Size = new System.Drawing.Size(164, 25);
+            this.labelSpentMoney.Size = new System.Drawing.Size(110, 25);
             this.labelSpentMoney.TabIndex = 7;
-            this.labelSpentMoney.Text = "Потрачено денег";
+            this.labelSpentMoney.Text = "Потрачено";
             // 
             // labelStats
             // 
             this.labelStats.AutoSize = true;
-            this.labelStats.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelStats.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelStats.ForeColor = System.Drawing.Color.White;
             this.labelStats.Location = new System.Drawing.Point(8, 5);
             this.labelStats.Name = "labelStats";
-            this.labelStats.Size = new System.Drawing.Size(84, 20);
+            this.labelStats.Size = new System.Drawing.Size(126, 25);
             this.labelStats.TabIndex = 6;
             this.labelStats.Text = "Статистика";
             // 
@@ -263,6 +311,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(656, 390);
             this.Controls.Add(this.panelWallets);
             this.Controls.Add(this.panelStats);

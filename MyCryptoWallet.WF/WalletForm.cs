@@ -37,8 +37,6 @@ namespace MyCryptoWallet.WF
             var backColor = Color.FromKnownColor(KnownColor.Control);
             var gridColor = Color.Black;
             var cellBackColor = Color.LightGray;
-            DataGridStyle(dataGridViewHistory, backColor, gridColor, cellBackColor);
-            DataGridStyle(dataGridViewWallets, backColor, gridColor, cellBackColor);
         }
 
         private async void coinComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -123,20 +121,6 @@ namespace MyCryptoWallet.WF
             dataGridViewHistory.Columns[5].HeaderText = "Количество";
             dataGridViewHistory.Columns[6].HeaderText = "Комиссия";
             dataGridViewHistory.Columns[7].HeaderText = "Покупка";
-        }
-        private void DataGridStyle(DataGridView dgv, Color backColor, Color gridColor, Color cellBackColor)
-        {
-            dgv.BackgroundColor = backColor;
-            dgv.GridColor = gridColor;
-            dgv.DefaultCellStyle.BackColor = backColor;
-            dgv.DefaultCellStyle.SelectionBackColor = dgv.DefaultCellStyle.BackColor;
-            dgv.DefaultCellStyle.SelectionForeColor = dgv.DefaultCellStyle.ForeColor;
-            dgv.ColumnHeadersDefaultCellStyle.BackColor = cellBackColor;
-            dgv.ColumnHeadersDefaultCellStyle.SelectionBackColor = dgv.ColumnHeadersDefaultCellStyle.BackColor;
-            dgv.ColumnHeadersDefaultCellStyle.SelectionForeColor = dgv.ColumnHeadersDefaultCellStyle.ForeColor;
-            dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-
-            dgv.EnableHeadersVisualStyles = false;
         }
     }
 }

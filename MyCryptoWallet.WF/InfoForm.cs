@@ -35,6 +35,10 @@ namespace MyCryptoWallet.WF
             chart.Name = "chart1";
             chart.Dock = DockStyle.Fill;
             chart.BackColor = backGround;
+            chart.ChartAreas[0].AxisX.LabelStyle.ForeColor = Color.FromArgb(158, 161, 176);
+            chart.ChartAreas[0].AxisY.LabelStyle.ForeColor = Color.FromArgb(158, 161, 176);
+            chart.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Nirmala UI", 10);
+            chart.ChartAreas[0].AxisY.LabelStyle.Font = new Font("Nirmala UI", 10);
 
             var sparkline = Data.Coins[coinComboBox.SelectedIndex].SparklineIn7d.Price;
             var interval = sparkline.Count / 7;
@@ -43,7 +47,7 @@ namespace MyCryptoWallet.WF
             for (int i = 0; i < 7; i++)
             {
                 var substractDay = 6-i;
-                chart.ChartAreas[0].AxisX.CustomLabels.Add(i * interval, i * interval + interval, today.Subtract(new TimeSpan(substractDay, 0, 0, 0)).ToShortDateString());
+                chart.ChartAreas[0].AxisX.CustomLabels.Add(i * interval, i * interval + interval, today.Subtract(new TimeSpan(substractDay, 0, 0, 0)).ToString("d.MM"));
             }
 
             Series series = new Series();
@@ -60,7 +64,7 @@ namespace MyCryptoWallet.WF
                     min = price;
                 series.Points.AddXY(i+1, price);
             }
-            chartArea1.Axes[1].Minimum = Math.Round(min);
+            chartArea1.Axes[1].Minimum = Convert.ToDouble(min.ToString("0.##"));
 
             chart.Series.Add(series);
         }
@@ -96,8 +100,8 @@ namespace MyCryptoWallet.WF
             labelPriceChangeMonthPercentValue.Text = coin.PriceChangePercentage30dInCurrency.ToString("#,0.##") + " %";
             labelCoinCountValue.Text = historyController.GetCoinCount(coinId).ToString();
 
-            Color backGround = Color.FromKnownColor(KnownColor.Control);
-            Color lineColor = Color.LightGray;
+            Color backGround = Color.FromArgb(37, 42, 64);
+            Color lineColor = Color.FromArgb(46, 51, 73);
             Color seriesColor = Color.FromArgb(65, 140, 241);
             var borderWidth = 2;
 

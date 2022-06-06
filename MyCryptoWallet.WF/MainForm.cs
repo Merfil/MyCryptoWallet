@@ -65,18 +65,38 @@ namespace MyCryptoWallet.WF
         {
             var walletFotm = new WalletForm();
             OpenForm(walletFotm, (sender as Button).Text);
+            PanelNav(sender as Button);
         }
 
         private void buttonCoins_Click(object sender, EventArgs e)
         {
             var infoForm = new InfoForm();
             OpenForm(infoForm, (sender as Button).Text);
+            PanelNav(sender as Button);
         }
 
         private void buttonAdmin_Click(object sender, EventArgs e)
         {
-            var adminForm = new AdminForm();
+            var adminForm = new DepositForm();
             OpenForm(adminForm, (sender as Button).Text);
+            PanelNav(sender as Button);
+        }
+
+        private void PanelNav(Button sender)
+        {
+            panelNav.Height = sender.Height;
+            panelNav.Top = sender.Top;
+            panelNav.Left = sender.Left;
+
+            foreach (var item in panelNavigation.Controls)
+            {
+                if (item is Button)
+                {
+                    (item as Button).BackColor = Color.FromArgb(20, 30, 54);
+                }
+            }
+
+            sender.BackColor = Color.FromArgb(46, 51, 73);
         }
     }
 }
