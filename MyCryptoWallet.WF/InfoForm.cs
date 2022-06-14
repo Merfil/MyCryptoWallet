@@ -106,6 +106,7 @@ namespace MyCryptoWallet.WF
             var borderWidth = 2;
 
             AddChart(backGround, lineColor, seriesColor, borderWidth);
+            textBoxCount_KeyUp(null, null);
         }
 
         private void buttonBuy_Click(object sender, EventArgs e)

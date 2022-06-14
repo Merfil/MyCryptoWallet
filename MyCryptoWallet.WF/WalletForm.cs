@@ -42,7 +42,9 @@ namespace MyCryptoWallet.WF
         private void coinComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var histories = new List<History>();
-            var coin = Data.Coins[coinComboBox.SelectedIndex];
+            //var coin = Data.Coins[coinComboBox.SelectedIndex];
+            var coin = new Coin();
+
             if (coinComboBox.Text != "All")
             {
                 coin = Data.Coins[coinComboBox.SelectedIndex - 1];
