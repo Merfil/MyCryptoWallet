@@ -1,4 +1,5 @@
 ﻿using MyCryptoWallet.BL.Model;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -13,16 +14,15 @@ namespace MyCryptoWallet.BL.Controller
 {
     public class ApiController
     {
+        public Coin[]? CoinsInfo;
         string _address;
-        string _response;
-        ApiEnum.Currency _currency = ApiEnum.Currency.usd;
-        public ApiController(ApiEnum.Coin coin, ApiEnum.Currency currency)
+        string response;
+        public ApiController()
         {
-            _address = $"https://api.coingecko.com/api/v3/coins/{coin}?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false";
-            _currency = currency;
+            _address = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin%2Cethereum%2Ctether%2Cbinancecoin%2Ccardano%2Csolana%2Cdogecoin%2Cpolkadot%2Clitecoin%2Ctron&order=market_cap_desc&per_page=100&page=1&sparkline=true&price_change_percentage=1h%2C7d%2C14d%2C30d";
         }
 
-        public string GetResponse(ApiEnum.Command command, ApiEnum.Currency currency)
+        public Coin[] GetResponse()
         {
             HttpWebRequest _request = (HttpWebRequest)WebRequest.Create(_address);
             _request.Method = "GET";
@@ -31,47 +31,10 @@ namespace MyCryptoWallet.BL.Controller
                 HttpWebResponse responce = (HttpWebResponse)_request.GetResponse();
                 var stream = responce.GetResponseStream();
                 if (stream != null)
-                    _response = new StreamReader(stream).ReadToEnd();
-                double answer = (double)JObject.Parse(_response)["market_data"][command.ToString()][currency.ToString()];
-                return answer.ToString("#,0.##");
+                    response = new StreamReader(stream).ReadToEnd();
+                return JsonConvert.DeserializeObject<Coin[]>(response);
             }
             catch (Exception) { return null; }
-        }
-
-        public string GetResponse(ApiEnum.Command command)
-        {
-            HttpWebRequest _request = (HttpWebRequest)WebRequest.Create(_address);
-            _request.Method = "GET";
-            try
-            {
-                HttpWebResponse responce = (HttpWebResponse)_request.GetResponse();
-                var stream = responce.GetResponseStream();
-                if (stream != null)
-                    _response = new StreamReader(stream).ReadToEnd();
-                return JObject.Parse(_response)["market_data"][command.ToString()].ToString();
-            }
-            catch (Exception) { return null; }
-        }
-
-        public string[] GetInfo()
-        {
-            string[] a = new string[11];
-            int comandCount = Enum.GetNames(typeof(ApiEnum.Command)).Length-1;
-            ApiEnum.Command com;
-
-            for (int i = 0; i < 4; i++)
-            {
-                com = ((ApiEnum.Command)Enum.GetValues(typeof(ApiEnum.Command)).GetValue(i));
-                a[i] = GetResponse(com, _currency) + " " + _currency;
-            }
-            for (int i = 4; i < comandCount; i++)
-            {
-                com = ((ApiEnum.Command)Enum.GetValues(typeof(ApiEnum.Command)).GetValue(i));
-                a[i] = GetResponse(com, _currency) + " %";
-            }
-            com = ((ApiEnum.Command)Enum.GetValues(typeof(ApiEnum.Command)).GetValue(comandCount));
-            a[comandCount] = GetResponse(com);
-            return a;
         }
     }
 }

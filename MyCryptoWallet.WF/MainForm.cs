@@ -1,4 +1,5 @@
 ﻿using MyCryptoWallet.BL.Controller;
+using MyCryptoWallet.BL.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace MyCryptoWallet.WF
 {
     public partial class MainForm : Form
     {
+
         #region Drag 'n Drop
         [DllImport("user32", CharSet = CharSet.Auto)]
         internal extern static bool PostMessage(IntPtr hWnd, uint Msg, uint WParam, uint LParam);
@@ -29,17 +31,8 @@ namespace MyCryptoWallet.WF
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
+            PanelNav(sender as Button);
             Application.Exit();
-        }
-
-        private void buttonCoins_Click(object sender, EventArgs e)
-        {
-            labelHeader.Text = buttonCoins.Text;
-            panelMain.Controls.Clear();
-            InfoForm infoForm = new InfoForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            infoForm.FormBorderStyle = FormBorderStyle.None;
-            panelMain.Controls.Add(infoForm);
-            infoForm.Show();
         }
 
         private void TitleBar_MouseDown(object sender, MouseEventArgs e)
@@ -48,30 +41,65 @@ namespace MyCryptoWallet.WF
             PostMessage(this.Handle, WM_SYSCOMMAND, DOMOVE, 0);
         }
 
-        private void buttonAdmin_Click(object sender, EventArgs e)
-        {
-            labelHeader.Text = buttonAdmin.Text;
-            panelMain.Controls.Clear();
-            AdminForm adminForm = new AdminForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            adminForm.FormBorderStyle = FormBorderStyle.None;
-            panelMain.Controls.Add(adminForm);
-            adminForm.Show();
-        }
-
         private void MainForm_Load(object sender, EventArgs e)
         {
             HistoryController historyController = new HistoryController();
+            ApiController apiController = new ApiController();
+
+            Data.Coins = apiController.GetResponse();
             historyController.CreateWallets();
+
+            buttonWallet_Click(buttonWallet, null);
+        }
+
+        private void OpenForm(Form form, string text)
+        {
+            labelHeader.Text = text;
+            panelMain.Controls.Clear();
+            form.Dock = DockStyle.Fill;
+            form.TopLevel = false;
+            form.TopMost = true;
+            form.FormBorderStyle = FormBorderStyle.None;
+            panelMain.Controls.Add(form);
+            form.Show();
         }
 
         private void buttonWallet_Click(object sender, EventArgs e)
         {
-            labelHeader.Text = (sender as Button).Text;
-            panelMain.Controls.Clear();
-            WalletForm walletForm = new WalletForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            walletForm.FormBorderStyle = FormBorderStyle.None;
-            panelMain.Controls.Add(walletForm);
-            walletForm.Show();
+            var walletFotm = new WalletForm();
+            OpenForm(walletFotm, (sender as Button).Text);
+            PanelNav(sender as Button);
+        }
+
+        private void buttonCoins_Click(object sender, EventArgs e)
+        {
+            var infoForm = new InfoForm();
+            OpenForm(infoForm, (sender as Button).Text);
+            PanelNav(sender as Button);
+        }
+
+        private void buttonAdmin_Click(object sender, EventArgs e)
+        {
+            var adminForm = new DepositForm();
+            OpenForm(adminForm, (sender as Button).Text);
+            PanelNav(sender as Button);
+        }
+
+        private void PanelNav(Button sender)
+        {
+            panelNav.Height = sender.Height;
+            panelNav.Top = sender.Top;
+            panelNav.Left = sender.Left;
+
+            foreach (var item in panelNavigation.Controls)
+            {
+                if (item is Button)
+                {
+                    (item as Button).BackColor = Color.FromArgb(20, 30, 54);
+                }
+            }
+
+            sender.BackColor = Color.FromArgb(46, 51, 73);
         }
     }
 }

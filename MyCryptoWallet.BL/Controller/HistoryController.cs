@@ -28,35 +28,33 @@ namespace MyCryptoWallet.BL.Controller
             return context.Histories.ToList();
         }
 
+        public List<History> GetHistories(string coin)
+        {
+            var buyList = (context.Histories.Where(c => c.CoinId == coin).ToList());
+            return buyList;
+        }
+
         public double GetCoinCount(string coin)
         {
-            var wallet = new Wallet();
-            try
-            {
-                wallet = Wallets.Single(w => w.Coin == coin);
-            }
-            catch (Exception)
-            {
-                wallet.Coin = coin;
-                wallet.Count = 0;
-            }
+            var wallet = Wallets.Single(w => w.CoinId == coin);
             return wallet.Count;
         }
 
         public void CreateWallets ()
         {
-            var coinsCount = Enum.GetNames(typeof(ApiEnum.Coin)).Length;
+            var coinsCount = Data.Coins.Count();
             for (int i = 0; i < coinsCount; i++)
             {
-                var coin = Enum.GetValues(typeof(ApiEnum.Coin)).GetValue(i)?.ToString();
+                var coin = Data.Coins[i].Id.ToString();
                 var wallet = new Wallet();
                 try
                 {
-                    wallet = Wallets.Single(w => w.Coin == coin);
+                    wallet = Wallets.Single(w => w.CoinId == coin);
                 }
                 catch (Exception)
                 {
-                    wallet.Coin = coin;
+                    wallet.CoinName = Data.Coins[i].Name;
+                    wallet.CoinId = coin;
                     wallet.Count = 0;
                     context.Wallets.Add(wallet);
                     Wallets.Add(wallet);
@@ -65,37 +63,37 @@ namespace MyCryptoWallet.BL.Controller
             context.SaveChanges();
         }
 
-        public void ChangeValue(string coinToBuy, string coinToSell, double count, double price, bool isBuying)
+        public void ChangeValue(string coinId, string coinName, double count, double price, bool isBuying)
         {
-            var walletToBuy = Wallets.Single(w => w.Coin == coinToBuy);
-            var walletToSell = Wallets.Single(w => w.Coin == coinToSell);
+            var wallet = Wallets.Single(w => w.CoinId == coinId);
+            var tetherWallet = Wallets.Single(w => w.CoinId == "tether");
             var fee = Math.Round(GetFees(price, count),2);
 
             if (isBuying)
             {
-                walletToSell.Count -= Math.Round(price * count + fee, 2);
-                walletToBuy.Count += Math.Round(count, 2);
+                tetherWallet.Count -= price * count + fee;
+                wallet.Count += count;
             }
             else
             {
-                walletToSell.Count -= Math.Round(count, 2);
-                walletToBuy.Count += Math.Round(price * count - fee, 2);
+                wallet.Count -= count;
+                tetherWallet.Count += price * count - fee;
             }
 
-            walletToSell.Count = Math.Round(walletToSell.Count, 2);
-            walletToBuy.Count = Math.Round(walletToBuy.Count, 2);
+            wallet.Count = Math.Round(wallet.Count, 2);
+            tetherWallet.Count = Math.Round(tetherWallet.Count, 2);
 
-            var history = new History(coinToBuy, coinToSell, price, count, fee, isBuying);
+            var history = new History(coinId, coinName, price, count, fee, isBuying);
 
             context.Histories.Add(history);
-            context.Wallets.Update(walletToBuy);
-            context.Wallets.Update(walletToSell);
+            context.Wallets.Update(wallet);
+            context.Wallets.Update(tetherWallet);
             context.SaveChanges();
         }
 
         public void ChangeValue(string coin, double count)
         {
-            var wallet = Wallets.Single(w => w.Coin == coin);
+            var wallet = Wallets.Single(w => w.CoinId == coin);
             wallet.Count += count;
             Math.Round(wallet.Count, 2);
 
